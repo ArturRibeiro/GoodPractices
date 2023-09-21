@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{74F022A1-98AD-4008-8D1E-891A260588AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration.Testing", "Integration.Testing\Integration.Testing.csproj", "{A8E04D1C-76B5-4EFA-9ADF-39AC68C77267}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A8E04D1C-76B5-4EFA-9ADF-39AC68C77267} = {74F022A1-98AD-4008-8D1E-891A260588AC}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8E04D1C-76B5-4EFA-9ADF-39AC68C77267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E04D1C-76B5-4EFA-9ADF-39AC68C77267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E04D1C-76B5-4EFA-9ADF-39AC68C77267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E04D1C-76B5-4EFA-9ADF-39AC68C77267}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
