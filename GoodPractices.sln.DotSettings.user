@@ -4,5 +4,13 @@
     &lt;TestId&gt;xUnit::A8E04D1C-76B5-4EFA-9ADF-39AC68C77267::net7.0::Integration.Testing.ApplicationDbContextTests.GetApplicationDbContext&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::A8E04D1C-76B5-4EFA-9ADF-39AC68C77267::net7.0::Integration.Testing.ApplicationDbContextTests2.GetApplicationDbContext2&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::A8E04D1C-76B5-4EFA-9ADF-39AC68C77267::net7.0::Integration.Testing.ApplicationDbContextTests2&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.UnitTest1.Domain&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.UnitTest1.OK&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.UnitTest1.Domain_should_Not_HaveDependencyOnOtherProjects&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.UnitTest1.DomainLayer_ShouldNotReference_Application_Infrastructure_Web&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.UnitTest1.DomainShouldNotHaveDependencyOnOtherProjects&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.InfrastructureTests.InfrastructureShouldNotHaveDependencyOnOtherProjects&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.DomainTest.DomainShouldNotHaveDependencyOnOtherProjects&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.ApplicationTests.ApplicationShouldNotHaveDependencyOnOtherProjects&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
