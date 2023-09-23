@@ -1,0 +1,11 @@
+global using FluentAssertions;
+global using Microsoft.AspNetCore.Builder;
+global using Xunit;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.AspNetCore.TestHost;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Options;
+global using Pattern.Options.Unit.Testing;
+global using Pattern.Options.Unit.Testing.Utils;

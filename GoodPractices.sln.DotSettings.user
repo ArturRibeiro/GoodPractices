@@ -1,16 +1,7 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5eaf5e73_002D80c0_002D4599_002Da24a_002D288a28e0ab7d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetConfiguration" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\ARRB\OneDrive - GFT Technologies SE\Documents\Projeto\GoodPractices\Patterns\Pattern.Options.Unit.Testing" Presentation="&amp;lt;Patterns&amp;gt;\&amp;lt;Managing Configuration With Options Pattern&amp;gt;\&amp;lt;tests&amp;gt;\&amp;lt;Pattern.Options.Unit.Testing&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7daa49b4_002De945_002D419e_002D8732_002D71fd9a5f3934/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetApplicationDbContext" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::A8E04D1C-76B5-4EFA-9ADF-39AC68C77267::net7.0::Integration.Testing.ApplicationDbContextTests.GetApplicationDbContext&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::A8E04D1C-76B5-4EFA-9ADF-39AC68C77267::net7.0::Integration.Testing.ApplicationDbContextTests2.GetApplicationDbContext2&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::A8E04D1C-76B5-4EFA-9ADF-39AC68C77267::net7.0::Integration.Testing.ApplicationDbContextTests2&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.UnitTest1.Domain&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.UnitTest1.OK&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.UnitTest1.Domain_should_Not_HaveDependencyOnOtherProjects&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.UnitTest1.DomainLayer_ShouldNotReference_Application_Infrastructure_Web&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.UnitTest1.DomainShouldNotHaveDependencyOnOtherProjects&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.InfrastructureTests.InfrastructureShouldNotHaveDependencyOnOtherProjects&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.DomainTest.DomainShouldNotHaveDependencyOnOtherProjects&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::3D029067-E6AE-419B-8174-EF7FFA35E3EE::net7.0::Writing.Architecture.Unit.Tests.ApplicationTests.ApplicationShouldNotHaveDependencyOnOtherProjects&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
