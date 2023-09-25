@@ -6,4 +6,4 @@
 
 ### Design Patterns
 - Options pattern validation
-- Decorator
+- Aspect programming
