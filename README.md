@@ -6,3 +6,4 @@
 
 ### Design Patterns
 - Options pattern validation
+- Decorator
