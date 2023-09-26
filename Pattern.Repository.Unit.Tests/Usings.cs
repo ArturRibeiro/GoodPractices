@@ -1,0 +1,9 @@
+global using FluentAssertions;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.ChangeTracking;
+global using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+global using Microsoft.EntityFrameworkCore.Metadata;
+global using Moq;
+global using Pattern.Repository.Unit.Tests.Fakers;
+global using Pattern.Repository.Unit.Tests.Repositorys;
+global using Xunit;

@@ -1,9 +1,10 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5eaf5e73_002D80c0_002D4599_002Da24a_002D288a28e0ab7d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetConfiguration" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::96C14118-7C39-4CAA-A74B-86105A4CF03F::net7.0::Pattern.Aspect.Integration.Tests.CacheInterceptorTests.InterceptExecuteCache&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\ARRB\AppData\Local\JetBrains\Rider2023.2\resharper-host\temp\Rider\vAny\CoverageData\_GoodPractices.1726143563\Snapshot\snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=71a49c08_002D80ca_002D4860_002D93d8_002D6fcb06ce9849/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;Project Location="C:\Users\ARRB\OneDrive - GFT Technologies SE\Documents\Projeto\GoodPractices" Presentation="&amp;lt;Patterns&amp;gt;" /&gt;&#xD;
+    &lt;Project Location="C:\Users\ARRB\OneDrive - GFT Technologies SE\Documents\Projeto\GoodPractices" Presentation="&amp;lt;Tests&amp;gt;" /&gt;&#xD;
+  &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7daa49b4_002De945_002D419e_002D8732_002D71fd9a5f3934/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetApplicationDbContext" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Solution /&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+	
+	</wpf:ResourceDictionary>
