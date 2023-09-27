@@ -25,11 +25,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Pattern.Aspect\Pattern.Aspect.csproj" />
       <ProjectReference Include="..\Pattern.Facade\Pattern.Facade.csproj" />
     </ItemGroup>
-
-
 
 
 </Project>
