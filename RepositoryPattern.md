@@ -1,4 +1,4 @@
-### Propposito do pattern Repository
+### Proposito do pattern Repository
 
 O design pattern Repository é um padrão de projeto de software que é comumente usado para 
 separar a lógica de acesso a dados da lógica de negócios em um aplicativo. Ele fornece uma 

@@ -8,3 +8,4 @@
 - Options pattern validation
 - Aspect programming
 - [Repository](RepositoryPattern.md)
+- [Adapter](AdapterPattern.md)
