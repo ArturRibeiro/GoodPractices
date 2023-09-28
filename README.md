@@ -10,3 +10,4 @@
 - [Repository](RepositoryPattern.md)
 - [Adapter](AdapterPattern.md)
 - [Facade](FacadePattern.md)
+- [Chain Of Responsibility](ChainOfResponsibilityPattern.md)
