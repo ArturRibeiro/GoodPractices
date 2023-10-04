@@ -37,6 +37,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Aspect", "Pattern.Aspect\Pattern.Aspect.csproj", "{CC4EC038-E404-4D65-96BC-D8642968A93B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository pattern", "Repository pattern", "{918D9E8C-4255-4B6F-87C6-2B37808E7648}"
+	ProjectSection(SolutionItems) = preProject
+		RepositoryPattern.md = RepositoryPattern.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7A3980C5-A680-4637-922B-25B40CDE704D}"
 EndProject
@@ -47,6 +50,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Repository.Unit.Tests", "Pattern.Repository.Unit.Tests\Pattern.Repository.Unit.Tests.csproj", "{5CCF8508-EA00-4A8A-867C-1E739C61E62B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapter pattern", "Adapter pattern", "{5A15A159-6CE7-4F9A-9E88-91447789E27A}"
+	ProjectSection(SolutionItems) = preProject
+		AdapterPattern.md = AdapterPattern.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Adapter", "Pattern.Adapter\Pattern.Adapter.csproj", "{CB17CC71-193E-4F7D-8EA8-E461ADDBA51A}"
 EndProject
@@ -55,6 +61,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Adapter.Unit.Tests", "Pattern.Adapter.Unit.Tests\Pattern.Adapter.Unit.Tests.csproj", "{21FC6F53-C15C-440C-B57B-3C8AA0AF47EA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Facade pattern", "Facade pattern", "{8847BCF9-0987-4BE0-84D6-C690B1523341}"
+	ProjectSection(SolutionItems) = preProject
+		FacadePattern.md = FacadePattern.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F49F7F45-1747-454B-9808-2E1BBD7CB36C}"
 EndProject
@@ -63,12 +72,36 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Facade.Unit.Tests", "Pattern.Facade.Unit.Tests\Pattern.Facade.Unit.Tests.csproj", "{31535758-0394-4D81-AC9E-20E5C47D9860}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chain of Responsibility pattern", "Chain of Responsibility pattern", "{25BD27D8-BA42-412F-935E-80C4DE2AF451}"
+	ProjectSection(SolutionItems) = preProject
+		ChainOfResponsibilityPattern.md = ChainOfResponsibilityPattern.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chain.Of.Responsibility", "Chain.Of.Responsibility\Chain.Of.Responsibility.csproj", "{2B4F55E8-3FCB-4207-B0EE-7FBBB385FBBF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A2D92809-EA4A-4336-8480-458D7F1D82AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chain.Of.Responsibility.Unit.Testing", "Chain.Of.Responsibility.Unit.Testing\Chain.Of.Responsibility.Unit.Testing.csproj", "{03A1EFC4-4C72-4A59-BB01-78D6529A3860}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Saga pattern", "Saga pattern", "{15CB82E5-E5B2-4848-80A2-DC83BFD6237A}"
+	ProjectSection(SolutionItems) = preProject
+		SagaPattern.md = SagaPattern.md
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Saga.Application", "Pattern.Saga.Application\Pattern.Saga.Application.csproj", "{63B28B50-5A93-4CEF-A9D5-E0631FAD6D7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{597867F6-4E3C-4C54-9C80-0341B5640B88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Saga.Integration.Testing", "Pattern.Saga.Integration.Testing\Pattern.Saga.Integration.Testing.csproj", "{A65A71B7-0038-4EB8-BE09-27E98EAD8811}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F6C238F6-7AB9-4E53-B0EC-AE5BD1BBDF8B}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Saga.Web.Api", "Pattern.Saga.Web.Api\Pattern.Saga.Web.Api.csproj", "{1F8C6BC2-E531-476D-B0E0-F38B4354F2E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Saga.Domain", "Pattern.Saga.Domain\Pattern.Saga.Domain.csproj", "{2976115E-FA37-40D9-AA36-8113DA06A779}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +142,12 @@ Global
 		{2B4F55E8-3FCB-4207-B0EE-7FBBB385FBBF} = {25BD27D8-BA42-412F-935E-80C4DE2AF451}
 		{A2D92809-EA4A-4336-8480-458D7F1D82AC} = {25BD27D8-BA42-412F-935E-80C4DE2AF451}
 		{03A1EFC4-4C72-4A59-BB01-78D6529A3860} = {A2D92809-EA4A-4336-8480-458D7F1D82AC}
+		{15CB82E5-E5B2-4848-80A2-DC83BFD6237A} = {B0F6DA45-9159-4E74-B560-E955820E9980}
+		{63B28B50-5A93-4CEF-A9D5-E0631FAD6D7B} = {15CB82E5-E5B2-4848-80A2-DC83BFD6237A}
+		{597867F6-4E3C-4C54-9C80-0341B5640B88} = {15CB82E5-E5B2-4848-80A2-DC83BFD6237A}
+		{A65A71B7-0038-4EB8-BE09-27E98EAD8811} = {597867F6-4E3C-4C54-9C80-0341B5640B88}
+		{1F8C6BC2-E531-476D-B0E0-F38B4354F2E6} = {15CB82E5-E5B2-4848-80A2-DC83BFD6237A}
+		{2976115E-FA37-40D9-AA36-8113DA06A779} = {15CB82E5-E5B2-4848-80A2-DC83BFD6237A}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A8E04D1C-76B5-4EFA-9ADF-39AC68C77267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -183,5 +222,21 @@ Global
 		{03A1EFC4-4C72-4A59-BB01-78D6529A3860}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03A1EFC4-4C72-4A59-BB01-78D6529A3860}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03A1EFC4-4C72-4A59-BB01-78D6529A3860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63B28B50-5A93-4CEF-A9D5-E0631FAD6D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B28B50-5A93-4CEF-A9D5-E0631FAD6D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B28B50-5A93-4CEF-A9D5-E0631FAD6D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B28B50-5A93-4CEF-A9D5-E0631FAD6D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A65A71B7-0038-4EB8-BE09-27E98EAD8811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65A71B7-0038-4EB8-BE09-27E98EAD8811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65A71B7-0038-4EB8-BE09-27E98EAD8811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65A71B7-0038-4EB8-BE09-27E98EAD8811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8C6BC2-E531-476D-B0E0-F38B4354F2E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8C6BC2-E531-476D-B0E0-F38B4354F2E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8C6BC2-E531-476D-B0E0-F38B4354F2E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8C6BC2-E531-476D-B0E0-F38B4354F2E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2976115E-FA37-40D9-AA36-8113DA06A779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2976115E-FA37-40D9-AA36-8113DA06A779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2976115E-FA37-40D9-AA36-8113DA06A779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2976115E-FA37-40D9-AA36-8113DA06A779}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

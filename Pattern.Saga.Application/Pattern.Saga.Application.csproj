@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>$(TargetFramework)</TargetFramework>
+        <ImplicitUsings>$(ImplicitUsings)</ImplicitUsings>
+        <Nullable>$(Nullable)</Nullable>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="$(MediatR)" />
+      <PackageReference Include="Rebus" Version="$(Rebus)" />
+      <PackageReference Include="Rebus.PostgreSql" Version="$(RebusPostgreSql)" />
+      <PackageReference Include="Rebus.RabbitMq" Version="$(RebusRabbitMq)" />
+      <PackageReference Include="Rebus.ServiceProvider" Version="$(RebusServiceProvider)" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Pattern.Saga.Domain\Pattern.Saga.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

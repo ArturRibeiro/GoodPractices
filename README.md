@@ -11,3 +11,4 @@
 - [Adapter](AdapterPattern.md)
 - [Facade](FacadePattern.md)
 - [Chain Of Responsibility](ChainOfResponsibilityPattern.md)
+- [Saga](SagaPattern.md)

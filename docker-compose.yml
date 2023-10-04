@@ -1,0 +1,35 @@
+﻿version: '3.4'
+
+services:
+  eshop.api:
+    image: ${DOCKER_REGISTRY-}webapi
+    container_name: eshop-api
+    build:
+      context: .
+      dockerfile: Pattern.Saga.Web.Api/Dockerfile
+  
+  eshop.db:
+    image: postgres:lastest
+    container_name: shop-db
+    environment:
+      - POSTGRES_DB=shop
+      - POSTGRES_USER:postgres
+      - POSTGRES_PASSWORLD:postgres
+    volumes:
+      - ./.containners/db:/var/lib/postgres/data
+    ports:
+      - 5432:5432
+  
+  eshop.mp:
+    image: rabbired:3-management
+    container_name: eshop-mp
+    hostname: eshop-mp
+    volumes:
+      - ./.containers/queue/data/:var/lib/rabbitmq
+      - ./.containers/queue/log/:var/log/rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
