@@ -11,4 +11,5 @@
 - [Adapter](AdapterPattern.md)
 - [Facade](FacadePattern.md)
 - [Chain Of Responsibility](ChainOfResponsibilityPattern.md)
-- [Saga](SagaPattern.md)
+- [Saga](SagaPattern.md) *
+- [Either](\Pattern.Functional.Programming\README.md)
