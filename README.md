@@ -12,4 +12,4 @@
 - [Facade](FacadePattern.md)
 - [Chain Of Responsibility](ChainOfResponsibilityPattern.md)
 - [Saga](SagaPattern.md) *
-- [Either](\Pattern.Functional.Programming\README.md)
+- [Either](/blob/main/Pattern.Functional.Programming/README.md)
