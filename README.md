@@ -7,7 +7,7 @@
 ### Design Patterns
 - Options pattern validation
 - Aspect programming
-- [Repository](RepositoryPattern.md)
+- [Repository](/Repository/RepositoryPattern.md)
 - [Adapter](/Pattern.Adapter/AdapterPattern.md)
 - [Facade](/Pattern.Facade/FacadePattern.md)
 - [Chain Of Responsibility](ChainOfResponsibilityPattern.md)
