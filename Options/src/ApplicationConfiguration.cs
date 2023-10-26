@@ -1,4 +1,4 @@
-﻿namespace Pattern.Options
+﻿namespace Pattern.Options.Validation
 {
     public class ApplicationConfiguration
     {

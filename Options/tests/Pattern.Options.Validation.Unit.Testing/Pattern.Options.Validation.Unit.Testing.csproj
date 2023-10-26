@@ -34,7 +34,7 @@
 
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Pattern.Options.csproj" />
+      <ProjectReference Include="..\..\src\Pattern.Options.Validation.csproj" />
     </ItemGroup>
 
 

@@ -91,9 +91,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Options", "Options", "{29D3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CDC0120A-7FA1-41AF-9C08-321061FB7BBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Options.Unit.Testing", "Options\tests\Pattern.Options.Unit.Testing\Pattern.Options.Unit.Testing.csproj", "{0596CFED-291A-4F21-B708-00BF000B162D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Options.Validation.Unit.Testing", "Options\tests\Pattern.Options.Validation.Unit.Testing\Pattern.Options.Validation.Unit.Testing.csproj", "{0596CFED-291A-4F21-B708-00BF000B162D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Options", "Options\src\Pattern.Options.csproj", "{390359C6-4E5C-48BC-A778-09CFD60618FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Options.Validation", "Options\src\Pattern.Options.Validation.csproj", "{390359C6-4E5C-48BC-A778-09CFD60618FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Writing.Integration.Testing.With.Docker.Integration.Testing", "Testing\Writing.Integration.Testing.With.Docker.Integration.Testing\Writing.Integration.Testing.With.Docker.Integration.Testing.csproj", "{0EC30B56-07FF-4904-A8FC-97E4EA9A5E55}"
 EndProject

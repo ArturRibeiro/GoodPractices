@@ -1,3 +1,5 @@
+using Pattern.Options.Validation;
+
 namespace Pattern.Options.Unit.Testing.Utils
 {
     public class IntegrationTestWebAppFactory : WebApplicationFactory<Program>, IAsyncLifetime

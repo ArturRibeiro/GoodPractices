@@ -1,4 +1,6 @@
-﻿namespace Pattern.Options.Unit.Testing
+﻿using Pattern.Options.Validation;
+
+namespace Pattern.Options.Unit.Testing
 {
     [Collection("IntegrationTestWebAppFactory")]
     public class ApplicationConfigurationTests
