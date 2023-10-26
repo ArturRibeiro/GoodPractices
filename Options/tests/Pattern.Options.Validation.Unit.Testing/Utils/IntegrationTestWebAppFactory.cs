@@ -1,12 +1,11 @@
-using Pattern.Options.Validation;
-
-namespace Pattern.Options.Unit.Testing.Utils
+namespace Pattern.Options.Validation.Unit.Testing.Utils
 {
     public class IntegrationTestWebAppFactory : WebApplicationFactory<Program>, IAsyncLifetime
     {
         private IConfigurationRoot configuration;
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
+            builder.UseContentRoot(Directory.GetCurrentDirectory());
             builder.ConfigureAppConfiguration((hostingContext, config) =>
                 {
                     configuration = config.SetBasePath(Directory.GetCurrentDirectory())

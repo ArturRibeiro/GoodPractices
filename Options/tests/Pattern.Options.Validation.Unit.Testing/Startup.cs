@@ -1,4 +1,4 @@
-﻿namespace Pattern.Options.Unit.Testing
+﻿namespace Pattern.Options.Validation.Unit.Testing
 {
     public class Startup
     {

@@ -11,6 +11,7 @@ namespace Writing.Integration.Testing.With.Docker.Integration.Testing.Utils
 
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
+            builder.UseContentRoot(Directory.GetCurrentDirectory());   
             builder.ConfigureTestServices(services =>
             {
                 services.ConfigureDbContext(_dbContainer.GetConnectionString());

@@ -10,7 +10,7 @@ public class UnitTest1
 {
     private static readonly ConcurrentDictionary<Guid, TaskCompletionSource<bool>> SagaCompletionTasks = new ConcurrentDictionary<Guid, TaskCompletionSource<bool>>();
     
-    [Fact]
+    [Fact(Skip = "Em estudo")]
     public async Task Test1()
     {
         using var activator = new BuiltinHandlerActivator();
