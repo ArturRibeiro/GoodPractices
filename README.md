@@ -8,8 +8,8 @@
 - Options pattern validation
 - Aspect programming
 - [Repository](RepositoryPattern.md)
-- [Adapter](AdapterPattern.md)
-- [Facade](FacadePattern.md)
+- [Adapter](/Pattern.Adapter/AdapterPattern.md)
+- [Facade](/Pattern.Facade/FacadePattern.md)
 - [Chain Of Responsibility](ChainOfResponsibilityPattern.md)
-- [Saga](SagaPattern.md) *
+- [Saga](/Saga/src/SagaPattern.md) *
 - [Either](/Pattern.Functional.Programming/README.md)
