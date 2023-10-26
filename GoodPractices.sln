@@ -18,6 +18,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7A3980C5-A680-4637-922B-25B40CDE704D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapter", "Adapter", "{5A15A159-6CE7-4F9A-9E88-91447789E27A}"
+	ProjectSection(SolutionItems) = preProject
+		Adapter\AdapterPattern.md = Adapter\AdapterPattern.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E8B115FD-8039-4118-B422-A80FAC417B88}"
 EndProject
@@ -44,6 +47,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{597867F6-4E3C-4C54-9C80-0341B5640B88}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Functional Programming", "Functional Programming", "{D7C2FC44-8CA9-4700-A606-0F54B0E89466}"
+	ProjectSection(SolutionItems) = preProject
+		Functional.Programming\README.Either.md = Functional.Programming\README.Either.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern.Saga.Domain", "Saga\src\Pattern.Saga.Domain\Pattern.Saga.Domain.csproj", "{32D90958-DAAF-4C0D-A1DC-5CC8166B8628}"
 EndProject
