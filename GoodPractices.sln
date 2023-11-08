@@ -113,6 +113,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{28DF582A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Writing.Architecture.Unit.Tests", "Architecture\tests\Writing.Architecture.Unit.Tests\Writing.Architecture.Unit.Tests.csproj", "{139CDB73-7333-472E-84CE-134B496DC509}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GraphQL", "GraphQL", "{E97B903D-FE9A-45AC-8625-7199F0CA6B50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Api", "GraphQL\GraphQL.Api\GraphQL.Api.csproj", "{4C93DBFF-C9DB-4A62-8D5B-D0988A079FFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -164,6 +168,7 @@ Global
 		{98E8EDA6-7574-4590-9B7F-2772083893FC} = {3B8EDC44-98E0-4A57-87C0-698B363B7DC7}
 		{28DF582A-C0BE-4146-943E-0DE6740F49EA} = {504B4523-08C7-4EDF-BA2C-AAEEB32513EB}
 		{139CDB73-7333-472E-84CE-134B496DC509} = {28DF582A-C0BE-4146-943E-0DE6740F49EA}
+		{4C93DBFF-C9DB-4A62-8D5B-D0988A079FFF} = {E97B903D-FE9A-45AC-8625-7199F0CA6B50}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{32D90958-DAAF-4C0D-A1DC-5CC8166B8628}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -262,5 +267,9 @@ Global
 		{139CDB73-7333-472E-84CE-134B496DC509}.Release|Any CPU.Build.0 = Release|Any CPU
 		{139CDB73-7333-472E-84CE-134B496DC509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{139CDB73-7333-472E-84CE-134B496DC509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C93DBFF-C9DB-4A62-8D5B-D0988A079FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C93DBFF-C9DB-4A62-8D5B-D0988A079FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C93DBFF-C9DB-4A62-8D5B-D0988A079FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C93DBFF-C9DB-4A62-8D5B-D0988A079FFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
