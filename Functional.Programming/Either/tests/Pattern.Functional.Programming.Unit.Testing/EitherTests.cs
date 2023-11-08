@@ -1,5 +1,7 @@
+using System.Collections.ObjectModel;
 using FluentAssertions;
 using Pattern.Functional.Programming.Extensions;
+using Pattern.Functional.Programming.Unit.Testing.Repositorys;
 
 namespace Pattern.Functional.Programming.Unit.Testing
 {
@@ -82,6 +84,33 @@ namespace Pattern.Functional.Programming.Unit.Testing
                 left.Should().BeOfType<DivideByZeroException>();
                 return 0;
             }, right: r => r).Should().Be(expected);
+        }
+        
+        [Theory]
+        [InlineData(1)]
+        public void ShoppingCartServiceSuccess(int productId)
+        {
+            var service = new ShoppingCartService();
+
+            // Arrange
+            Either<Exception, IEnumerable<Product>> AllProductsAvailable() => Try<IEnumerable<Product>>.Cath(() => service.GetProducts());
+            Either<Exception, Product?> SearchByProduct(IEnumerable<Product> list, int id) => Try<Product?>.Cath(() => list.FirstOrDefault(x => x.Id == id));
+            Either<Exception, ShoppingCart> AddCar(Product? product) => Try<ShoppingCart>.Cath(() => service.AddToCart(product));
+            Action<Exception> HandlerError = (exception) => {/*TODO: Loga o error*/};
+            
+            // Act
+            var result =
+                AllProductsAvailable()
+                    .Bind(products => SearchByProduct(products, productId))
+                    .Bind(product => AddCar(product))
+                    .Match(left => { HandlerError(left);
+                        return null;
+                    }, right => right);
+                
+            
+            // Assert's
+            result.Items.Should().HaveCount(1);
+            result.Items.ElementAt(0).Id.Should().Be(productId);
         }
     }
 }
