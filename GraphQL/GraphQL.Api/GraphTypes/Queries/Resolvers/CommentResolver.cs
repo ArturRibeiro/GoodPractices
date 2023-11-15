@@ -1,4 +1,4 @@
-namespace GraphQL.Api.GraphTypes.Resolvers;
+namespace GraphQL.Api.GraphTypes.Queries.Resolvers;
 
 internal record CommentResolver
 {

@@ -1,3 +1,5 @@
+using GraphQL.Api.GraphTypes.Queries.Resolvers;
+
 namespace GraphQL.Api.GraphTypes;
 
 public class PostType : ObjectType<Post>
@@ -7,9 +9,9 @@ public class PostType : ObjectType<Post>
         descriptor.Description("Graphql : Post Type");
         
         descriptor.Ignore(u => u.UserId);
-        descriptor.Ignore(u => u.Id);
         descriptor.Ignore(u => u.User);
-        
+
+        descriptor.Field(u => u.Id);
         descriptor.Field(u => u.Title);
         descriptor.Field(u => u.Content);
         descriptor.Field(u => u.CreationDate);

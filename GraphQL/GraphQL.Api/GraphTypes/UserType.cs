@@ -1,3 +1,5 @@
+using GraphQL.Api.GraphTypes.Queries.Resolvers;
+
 namespace GraphQL.Api.GraphTypes;
 
 public class UserType : ObjectType<User>
