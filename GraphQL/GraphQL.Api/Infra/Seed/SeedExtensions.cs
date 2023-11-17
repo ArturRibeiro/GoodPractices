@@ -33,12 +33,14 @@ public static class SeedExtensions
             .ToList();
         
         var users = Builder<User>
-            .CreateListOfSize(2)
+            .CreateListOfSize(50)
             .All()
                 .With(u => u.Name = Faker.Name.FullName())
                 .With(u => u.Email = Faker.Internet.Email())
                 .With(u => u.Password = Guid.NewGuid().ToString("d"))
             .TheFirst(1)
+                .With(u => u.Name = "Artur Ribeiro")
+                .With(u => u.Email = "artur.ribeiro@f22.com")
                 .With(u => u.Posts = new[] { posts[0], posts[1] }.ToList())
             .TheNext(1)
                 .With(u => u.Posts = new[] { posts[2], posts[3] }.ToList())

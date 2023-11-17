@@ -1,10 +1,23 @@
 {
-  users {
-    name
-    email
-    posts {
-      id
-      title
+  users(skip: 2, take: 10) {
+    items {
+      name
+      email
+      posts {
+        id
+        title
+        content
+        creationDate
+        comments {
+          content
+          creationDate
+        }
+      }
     }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+    totalCount
   }
 }

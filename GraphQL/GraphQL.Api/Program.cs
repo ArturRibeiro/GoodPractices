@@ -22,6 +22,7 @@ builder.Services
     .AddType<CommentType>()
     
     .AddProjections()
+    .AddFiltering()
     .RegisterDbContext<ApplicationDbContext>();
 
 var app = builder.Build();

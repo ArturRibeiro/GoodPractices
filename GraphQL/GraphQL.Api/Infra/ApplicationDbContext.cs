@@ -2,7 +2,8 @@ namespace GraphQL.Api.Infra;
 
 public class ApplicationDbContext : DbContext
 {
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseInMemoryDatabase(databaseName: "GraphQLDB");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseInMemoryDatabase(databaseName: "GraphQLDB")
+        .LogTo(Console.WriteLine);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
