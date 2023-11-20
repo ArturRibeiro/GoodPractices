@@ -1,0 +1,5 @@
+mutation {
+    addPost(input: { title: "titulo 2", content: "content 2", userId: 1 }) {
+        id
+    }
+}

@@ -1,11 +1,5 @@
 {
-  users(
-    where: {
-      name: { eq: "Optimus Prime" }
-      and: { email: { eq: "optimus.prime@autobot.com" } }
-      posts: { any: true }
-    }
-  ) {
+  users(skip: 0, take: 10) {
     items {
       id
       name
