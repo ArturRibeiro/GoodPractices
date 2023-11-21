@@ -2,8 +2,10 @@ namespace GraphQL.Api.Infra;
 
 public class ApplicationDbContext : DbContext
 {
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseInMemoryDatabase(databaseName: "GraphQLDB")
-        .LogTo(Console.WriteLine);
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => 
+        optionsBuilder.UseSqlite("Data Source=Post.db")
+            .LogTo(Console.WriteLine,
+                new[] { DbLoggerCategory.Database.Command.Name });
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

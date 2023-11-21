@@ -6,6 +6,8 @@ public static class SeedExtensions
     {
         var scope = app.Services.CreateScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        dbContext.Database.EnsureDeleted();
+        dbContext.Database.EnsureCreated();
         
         var comments = Builder<Comment>
             .CreateListOfSize(5)
