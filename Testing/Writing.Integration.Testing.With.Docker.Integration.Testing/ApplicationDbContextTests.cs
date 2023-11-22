@@ -12,7 +12,7 @@ namespace Writing.Integration.Testing.With.Docker.Integration.Testing
             _context = context;
         }
 
-        [Fact]
+        [Fact(Skip = "Need docker")]
         public async Task GetApplicationDbContext()
         {
             // using (DbConnection connection = new NpgsqlConnection(_postgreSqlContainer.GetConnectionString()))
