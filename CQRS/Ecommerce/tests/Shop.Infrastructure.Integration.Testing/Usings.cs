@@ -1,0 +1,11 @@
+global using Microsoft.AspNetCore.Builder;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.AspNetCore.TestHost;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Shop.Infrastructure.Configurations;
+global using Shop.Infrastructure.Integration.Testing;
+global using Shop.Infrastructure.Integration.Testing.Utils;
+global using Xunit;

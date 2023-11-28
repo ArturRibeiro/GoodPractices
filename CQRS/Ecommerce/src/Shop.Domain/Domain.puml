@@ -1,0 +1,60 @@
+@startuml
+class Product {
+  +name: String
+  +description: String
+  +price: Double
+  +quantityInStock: Int
+
+  +addProduct(): void
+  +removeProduct(): void
+  +updateProduct(): void
+}
+
+class ShoppingCart {
+  +items: List<Item>
+
+  +addItem(item: Item): void
+  +removeItem(item: Item): void
+  +updateItem(item: Item): void
+}
+
+class Order {
+  +items: List<Item>
+  +totalPrice: Double
+  +buyerInfo: UserInfo
+
+  +processOrder(): void
+  +calculateTotalPrice(): Double
+}
+
+class User {
+  +name: String
+  +address: String
+  +paymentInfo: PaymentInfo
+
+  +updateProfile(): void
+}
+
+class PaymentInfo {
+  +cardNumber: String
+  +expirationDate: String
+  +cvv: String
+
+  +processPayment(): void
+}
+
+class Item {
+  +product: Product
+  +quantity: Int
+
+  +calculateSubtotal(): Double
+}
+
+Product --* Item: Contains
+ShoppingCart --* Item: Contains
+Order --* Item: Contains
+Order --* UserInfo: Belongs to
+User --* PaymentInfo: Has
+Item --|> Product: Includes
+PaymentInfo --|> Order: Payment for
+@enduml
