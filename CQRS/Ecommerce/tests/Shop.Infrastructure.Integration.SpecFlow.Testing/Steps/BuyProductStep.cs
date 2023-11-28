@@ -1,5 +1,3 @@
-using FluentAssertions;
-
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Steps;
 
 [Binding]
@@ -13,9 +11,14 @@ public class BuyProductStep
         _factory = factory;
         _factory.ApplicationDbContext.Should().NotBeNull();
     }
-    
+
     [Given(@"existe alguns produtos com nome e preço")]
-    public void GivenExisteAlgunsProdutosComNomeEPreco() { }
+    public void GivenExisteAlgunsProdutosComNomeEPreco()
+    {
+        // var client = _factory.CreateClient();
+        // var ok = client.GetAsync("WeatherForecast").GetAwaiter().GetResult();
+        // var r = ok.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+    }
 
     [Given(@"o usuário tem um carrinho de compras vazio")]
     public void GivenOUsuarioTemUmCarrinhoDeComprasVazio() { }
@@ -33,32 +36,20 @@ public class BuyProductStep
     public void ThenOEstoqueDoProdutoDeveSerReduzidoDeAcordoComAQuantidadeSelecionadaPeloUsuaroo() { }
 
     [Then(@"o status da ordem deve ser ""(.*)""")]
-    public void ThenOStatusDaOrdemDeveSer(string pending)
-    {
-    }
+    public void ThenOStatusDaOrdemDeveSer(string pending) { }
 
     [When(@"o status da ordem é alterado para ""(.*)""")]
-    public void WhenOStatusDaOrdemEAlteradoPara(string awaitingPayment)
-    {
-    }
+    public void WhenOStatusDaOrdemEAlteradoPara(string awaitingPayment) { }
 
     [When(@"o usuário realiza o pagamento")]
-    public void WhenOUsuarioRealizaOPagamento()
-    {
-    }
+    public void WhenOUsuarioRealizaOPagamento() { }
 
     [When(@"o usuário cancela o pedido")]
-    public void WhenOUsuarioCancelaOPedido()
-    {
-    }
+    public void WhenOUsuarioCancelaOPedido() { }
 
     [When(@"o pedido é enviado")]
-    public void WhenOPedidoEEnviado()
-    {
-    }
+    public void WhenOPedidoEEnviado() { }
 
     [Then(@"o estoque do produto deve voltar a quantidade anterior")]
-    public void ThenOEstoqueDoProdutoDeveVoltarAQuantidadeAnterior()
-    {
-    }
+    public void ThenOEstoqueDoProdutoDeveVoltarAQuantidadeAnterior() { }
 }
