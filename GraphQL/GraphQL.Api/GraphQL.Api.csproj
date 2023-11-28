@@ -8,13 +8,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="GraphQL.Server.Ui.Voyager" Version="7.6.0" />
-        <PackageReference Include="HotChocolate.AspNetCore" Version="13.7.0" />
-        <PackageReference Include="HotChocolate.Data.EntityFramework" Version="13.7.0" />
-        <PackageReference Include="Faker.NETCore" Version="1.0.2" />
-        <PackageReference Include="FluentAssertions" Version="6.12.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.14" />
-        <PackageReference Include="NBuilder" Version="6.1.0" />
+        <PackageReference Include="GraphQL.Server.Ui.Voyager" Version="$(Voyager)" />
+        <PackageReference Include="HotChocolate.AspNetCore" Version="$(HotChocolate)" />
+        <PackageReference Include="HotChocolate.Data.EntityFramework" Version="$(HotChocolate)" />
+        <PackageReference Include="Faker.NETCore" Version="$(Faker)" />
+        <PackageReference Include="FluentAssertions" Version="$(FluentAssertions)" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="$(EntityFrameworkCore)" />
+        <PackageReference Include="NBuilder" Version="$(NBuilder)" />
     </ItemGroup>
 
     <ItemGroup>

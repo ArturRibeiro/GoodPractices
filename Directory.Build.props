@@ -12,6 +12,8 @@
         <xunitrunnervisualstudio>2.4.5</xunitrunnervisualstudio>
         <coverletcollector>3.2.0</coverletcollector>
         <FluentAssertions>6.12.0</FluentAssertions>
+        <NBuilder>6.1.0</NBuilder>
+        <Faker>1.0.2</Faker>
     </PropertyGroup>
     
     <PropertyGroup Label="Rebus">
@@ -20,6 +22,11 @@
         <RebusRabbitMq>7.4.6</RebusRabbitMq>
         <RebusServiceProvider>9.1.0</RebusServiceProvider>
         <MediatR>12.1.1</MediatR>
+    </PropertyGroup>
+
+    <PropertyGroup Label="GraphQL">
+        <HotChocolate>13.7.0</HotChocolate>
+        <Voyager>7.6.0</Voyager>
     </PropertyGroup>
     
     <PropertyGroup Label="Entity framework core">
