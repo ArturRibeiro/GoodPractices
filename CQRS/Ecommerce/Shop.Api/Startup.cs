@@ -19,7 +19,13 @@ public class Startup
         _builder.Services
             .AddGraphQLServer()
             .AddQueryType(d => d.Name("Query"))
+                .AddTypeExtension<DummyQuery>()
             .AddMutationType(d => d.Name("Mutation"))
+                .AddTypeExtension<CheckoutServiceMutation>()
+                .AddType<CheckoutMutationGraphType>()
+            
+            .AddType<DummyType>()
+            
             .AddProjections()
             .AddFiltering()
             //.RegisterDbContext<ApplicationDbContext>()
