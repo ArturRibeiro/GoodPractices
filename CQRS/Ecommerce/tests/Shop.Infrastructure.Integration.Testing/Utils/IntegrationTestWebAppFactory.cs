@@ -4,13 +4,14 @@ namespace Shop.Infrastructure.Integration.Testing.Utils
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
-            builder.UseContentRoot(Directory.GetCurrentDirectory());   
+            var currentDirectory = Directory.GetCurrentDirectory();
+            builder.UseContentRoot(currentDirectory);   
             builder.ConfigureTestServices(services =>
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
                 {
                     options
-                        .UseSqlite(@"Data Source=C:\Users\ARRB\OneDrive - GFT Technologies SE\Documents\Projeto\GoodPractices\CQRS\Ecommerce\tests\Shop.Infrastructure.Integration.Testing\Shop.db")
+                        .UseSqlite(@$"{currentDirectory}\Shop.db")
                         .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
                 });
             });

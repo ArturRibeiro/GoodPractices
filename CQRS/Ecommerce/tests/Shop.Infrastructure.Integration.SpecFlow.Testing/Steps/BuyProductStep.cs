@@ -1,8 +1,19 @@
+using FluentAssertions;
+
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Steps;
 
 [Binding]
+[Collection("IntegrationTestWebAppFactory")]
 public class BuyProductStep
 {
+    private readonly IntegrationTestWebAppFactory _factory;
+
+    public BuyProductStep(IntegrationTestWebAppFactory factory)
+    {
+        _factory = factory;
+        _factory.ApplicationDbContext.Should().NotBeNull();
+    }
+    
     [Given(@"existe alguns produtos com nome e preço")]
     public void GivenExisteAlgunsProdutosComNomeEPreco() { }
 
@@ -43,6 +54,11 @@ public class BuyProductStep
 
     [When(@"o pedido é enviado")]
     public void WhenOPedidoEEnviado()
+    {
+    }
+
+    [Then(@"o estoque do produto deve voltar a quantidade anterior")]
+    public void ThenOEstoqueDoProdutoDeveVoltarAQuantidadeAnterior()
     {
     }
 }
