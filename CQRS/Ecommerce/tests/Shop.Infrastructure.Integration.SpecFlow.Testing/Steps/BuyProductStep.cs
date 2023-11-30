@@ -1,3 +1,6 @@
+using HotChocolate.Execution;
+using Shop.Api.Graphs.Queries;
+
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Steps;
 
 [Binding]
@@ -13,11 +16,9 @@ public class BuyProductStep
     }
 
     [Given(@"existe alguns produtos com nome e preço")]
-    public void GivenExisteAlgunsProdutosComNomeEPreco()
+    public async Task GivenExisteAlgunsProdutosComNomeEPreco()
     {
-        // var client = _factory.CreateClient();
-        // var ok = client.GetAsync("WeatherForecast").GetAwaiter().GetResult();
-        // var r = ok.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+        var result = await _factory.Send<Dummy>("{dummy {id}}");
     }
 
     [Given(@"o usuário tem um carrinho de compras vazio")]
