@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Utils;
 
-public class IntegrationTestWebAppFactory : WebApplicationFactory<Program>, IAsyncLifetime
+public class ShopWebApplicationFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
@@ -43,7 +43,7 @@ public class IntegrationTestWebAppFactory : WebApplicationFactory<Program>, IAsy
         };
 
         var jsonString = JsonConvert.SerializeObject(queryObject);
-        using var response = await base.CreateClient().SendAsync(IntegrationTestWebAppFactoryHelper.CreateHttpRequestMessage(HttpMethod.Post, jsonString));
+        using var response = await base.CreateClient().SendAsync(ShopWebApplicationFactoryHelper.CreateHttpRequestMessage(HttpMethod.Post, jsonString));
         response.EnsureSuccessStatusCode();
         var responseString = await response.Content.ReadAsStringAsync();
         var obj = JObject.Parse(responseString);

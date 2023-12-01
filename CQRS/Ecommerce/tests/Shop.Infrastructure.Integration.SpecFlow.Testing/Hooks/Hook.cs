@@ -6,7 +6,7 @@ public class Hooks
     [BeforeTestRun]
     public static void RegisterPages()
     {
-        IntegrationTestWebAppFactory _factory = new IntegrationTestWebAppFactory();
+        ShopWebApplicationFactory _factory = new ShopWebApplicationFactory();
         var context =  _factory.Server.Services.CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();
         context.Database.EnsureDeleted();
         context.Database.EnsureCreated();

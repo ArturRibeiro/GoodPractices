@@ -2,7 +2,7 @@ using System.Text;
 
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Utils;
 
-public static class IntegrationTestWebAppFactoryHelper
+public static class ShopWebApplicationFactoryHelper
 {
     internal static Func<HttpMethod, string, HttpRequestMessage> CreateHttpRequestMessage = (httpMethod, json)
         => new HttpRequestMessage

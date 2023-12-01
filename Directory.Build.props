@@ -14,6 +14,8 @@
         <FluentAssertions>6.12.0</FluentAssertions>
         <NBuilder>6.1.0</NBuilder>
         <Faker>1.0.2</Faker>
+        <Bogus>34.0.2</Bogus>
+        <Testcontainers>3.5.0</Testcontainers>
     </PropertyGroup>
     
     <PropertyGroup Label="Rebus">

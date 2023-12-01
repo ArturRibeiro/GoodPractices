@@ -1,15 +1,12 @@
-using HotChocolate.Execution;
-using Shop.Api.Graphs.Queries;
-
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Steps;
 
 [Binding]
-[Collection("IntegrationTestWebAppFactory")]
+[Collection("ShopWebApplicationFactory")]
 public class BuyProductStep
 {
-    private readonly IntegrationTestWebAppFactory _factory;
+    private readonly ShopWebApplicationFactory _factory;
 
-    public BuyProductStep(IntegrationTestWebAppFactory factory)
+    public BuyProductStep(ShopWebApplicationFactory factory)
     {
         _factory = factory;
         _factory.ApplicationDbContext.Should().NotBeNull();

@@ -10,6 +10,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Testcontainers" Version="$(Testcontainers)" />
+        <PackageReference Include="Testcontainers.PostgreSql" Version="$(Testcontainers)" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.11" />
         <PackageReference Include="FluentAssertions" Version="6.12.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
@@ -32,7 +34,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Shop.Infrastructure\Shop.Infrastructure.csproj" />
+      <ProjectReference Include="..\..\src\Shop.Infrastructure\Shop.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="CustomContainerTests.cs" />
+      <None Include="CustomContainerTests.cs" />
     </ItemGroup>
 
 </Project>

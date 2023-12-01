@@ -11,7 +11,7 @@ namespace Shop.Infrastructure.Integration.Testing.Utils
                 services.AddDbContext<ApplicationDbContext>(options =>
                 {
                     options
-                        .UseSqlite(@$"{currentDirectory}\Shop.db")
+                        .UseSqlite(@$"Data Source={currentDirectory}\Shop.db")
                         .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
                 });
             });
