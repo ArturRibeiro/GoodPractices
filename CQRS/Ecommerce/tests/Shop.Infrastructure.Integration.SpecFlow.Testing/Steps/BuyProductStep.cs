@@ -37,7 +37,11 @@ public class BuyProductStep
     [Given(@"que o usuário visualize todos os produto")]
     public async Task GivenQueOUsuarioVisualizeTodosOsProduto()
     {
-        var products = await _factory.SendQuery<List<ProductReadModel>>(Query.Products);
+        var queryGraphql = QueryGraphql
+            .Instance("products", "id name description price quantityInStock")
+            .Builder();
+        
+        var products = await _factory.SendQuery<List<ProductReadModel>>(queryGraphql);
         products.Should().NotBeNull();
         products.Value.Should().NotBeNull();
         products.Value.Should().HaveCountGreaterThan(1);

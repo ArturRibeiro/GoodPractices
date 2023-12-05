@@ -38,21 +38,14 @@ public class ShopWebApplicationFactory : WebApplicationFactory<Program>, IAsyncL
             .ServiceProvider
             .GetRequiredService<ApplicationDbContext>();
 
-    public async Task<Result<T>> SendQuery<T>(Dictionary<string, string> di)
+    public async Task<Result<T>> SendQuery<T>(QueryGraphql query)
         where T : class
     {
-        var queryObject = new
-        {
-            query = "query { " + di.Keys.First() + " { " + di.Values.First() + " }}"
-            //, variables = new { where = new { userId = userId } }//you can add your where cluase here.
-        };
-
-        var jsonString = JsonConvert.SerializeObject(queryObject);
-        var message = ShopWebApplicationFactoryHelper.CreateHttpRequestMessage(HttpMethod.Post, jsonString);
+        var message = ShopWebApplicationFactoryHelper.CreateHttpRequestMessage(HttpMethod.Post, query.Query);
         using var response = await base.CreateClient().SendAsync(message);
         return response
             .SuccessStatusCode()
-            .ReadAsStringAsync<T>(di.Keys.First())
+            .ReadAsStringAsync<T>(query.Name)
             .ParseGraphQlResultToJson<T>()
             .SetResult();
     }
