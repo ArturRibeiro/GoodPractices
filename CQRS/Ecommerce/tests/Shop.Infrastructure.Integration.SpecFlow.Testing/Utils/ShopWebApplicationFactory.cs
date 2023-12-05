@@ -1,5 +1,10 @@
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using GraphQL;
+using GraphQL.Client.Http;
+using GraphQL.Client.Serializer.Newtonsoft;
+using HotChocolate.AspNetCore;
+using HotChocolate.Execution;
+using Shop.Infrastructure.Integration.SpecFlow.Testing.Steps;
+
 
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Utils;
 
@@ -33,25 +38,36 @@ public class ShopWebApplicationFactory : WebApplicationFactory<Program>, IAsyncL
             .ServiceProvider
             .GetRequiredService<ApplicationDbContext>();
 
-    public async Task<Result<T>> Send<T>(string query)
+    public async Task<Result<T>> SendQuery<T>(Dictionary<string, string> di)
         where T : class
     {
         var queryObject = new
         {
-            query
+            query = "query { " + di.Keys.First() + " { " + di.Values.First() + " }}"
             //, variables = new { where = new { userId = userId } }//you can add your where cluase here.
         };
 
         var jsonString = JsonConvert.SerializeObject(queryObject);
-        using var response = await base.CreateClient().SendAsync(ShopWebApplicationFactoryHelper.CreateHttpRequestMessage(HttpMethod.Post, jsonString));
-        response.EnsureSuccessStatusCode();
-        var responseString = await response.Content.ReadAsStringAsync();
-        var obj = JObject.Parse(responseString);
-        var result = JsonConvert.DeserializeObject<Result<T>>(obj["data"].ToString(), JsonSerializerSettingsHelper<T>.JsonSettings);
-        return result;
+        var message = ShopWebApplicationFactoryHelper.CreateHttpRequestMessage(HttpMethod.Post, jsonString);
+        using var response = await base.CreateClient().SendAsync(message);
+        return response
+            .SuccessStatusCode()
+            .ReadAsStringAsync<T>(di.Keys.First())
+            .ParseGraphQlResultToJson<T>()
+            .SetResult();
     }
-
-
+    
+    public async Task<Result<T>> ExceuteMutationAsyn<T>(MutationGraphql mutationGraphql)
+        where T : class
+    {
+        var message = ShopWebApplicationFactoryHelper.CreateHttpRequestMessage(HttpMethod.Post, mutationGraphql.Query);
+        using var response = await base.CreateClient().SendAsync(message);
+        return response
+            .SuccessStatusCode()
+            .ReadAsStringAsync<T>(mutationGraphql.Name)
+            .ParseGraphQlResultToJson<T>()
+            .SetResult();
+    }
 
     public async Task InitializeAsync()
     {

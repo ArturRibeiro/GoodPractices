@@ -1,3 +1,5 @@
+using Shop.Api.Graphs.Queries.Products;
+
 namespace Shop.Api;
 
 public class Startup
@@ -20,11 +22,13 @@ public class Startup
             .AddGraphQLServer()
             .AddQueryType(d => d.Name("Query"))
                 .AddTypeExtension<DummyQuery>()
+                .AddTypeExtension<ProductQuery>()
             .AddMutationType(d => d.Name("Mutation"))
                 .AddTypeExtension<CheckoutServiceMutation>()
                 .AddType<CheckoutMutationGraphType>()
             
             .AddType<DummyType>()
+            .AddType<ProductType>()
             
             .AddProjections()
             .AddFiltering()

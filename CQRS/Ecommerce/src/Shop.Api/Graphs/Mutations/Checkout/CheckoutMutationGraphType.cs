@@ -1,4 +1,4 @@
-namespace Shop.Api.Graphs.Mutations.InputTypes;
+namespace Shop.Api.Graphs.Mutations.Checkout;
 
 public class CheckoutMutationGraphType :  InputObjectType<CheckoutMessageResponse>
 {
@@ -12,7 +12,4 @@ public class CheckoutMutationGraphType :  InputObjectType<CheckoutMessageRespons
     }
 }
 
-public class CheckoutMessageResponse
-{
-    public long ProductId { get; set; }
-}
+public record CheckoutMessageResponse (long ProductId);

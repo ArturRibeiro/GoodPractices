@@ -4,10 +4,9 @@ namespace Shop.Api.Graphs.Mutations;
 public class CheckoutServiceMutation
 {
     public CheckoutMessageResponse Checkout(
-        CheckoutMessageResponse input/*, 
+        CheckoutMessageResponse input /*,
         [Service] ApplicationDbContext context*/)
     {
-
-        return new CheckoutMessageResponse();
+        return new CheckoutMessageResponse(input.ProductId);
     }
 }

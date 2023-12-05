@@ -1,7 +1,4 @@
-public record Dummy
-{
-    public Guid Id { get; set; } = Guid.NewGuid();
-}
+public record Dummy(Guid Id);
 
 public class DummyType : ObjectType<Dummy>
 {

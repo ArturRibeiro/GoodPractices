@@ -10,6 +10,11 @@
         <PackageReference Include="GraphQL.Server.Ui.Voyager" Version="$(Voyager)" />
         <PackageReference Include="HotChocolate.AspNetCore" Version="$(HotChocolate)" />
         <PackageReference Include="HotChocolate.Data.EntityFramework" Version="$(HotChocolate)" />
+        <PackageReference Include="Bogus" Version="$(Bogus)" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Graphs\Mutations\Checkout\Types\" />
     </ItemGroup>
 
 </Project>

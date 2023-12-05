@@ -5,5 +5,5 @@ namespace Shop.Api.Graphs.Queries;
 public record DummyQuery
 {
      public Dummy Dummy()
-         => new ();
+         => new (Guid.NewGuid());
 }

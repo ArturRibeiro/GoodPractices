@@ -11,6 +11,8 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="GraphQL.Client" Version="6.0.2" />
+        <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="6.0.2" />
         <PackageReference Include="Testcontainers" Version="$(Testcontainers)" />
         <PackageReference Include="Testcontainers.PostgreSql" Version="$(Testcontainers)" />
         <PackageReference Include="FluentAssertions" Version="6.12.0" />
