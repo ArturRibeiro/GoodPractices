@@ -28,13 +28,18 @@ namespace Pattern.Functional.Programming
             this._isLeft = false;
         }
 
-        protected Either()
-        {
-        }
+        protected Either() { }
         public virtual TResult Match<TResult>
             (Func<TLeft, TResult> left, Func<TRight, TResult> right)
             => _isLeft
                 ? left(this._left)
                 : right(this._right);
+        
+        public Either<TLeft, TResult> Map<TResult>(Func<TRight, TResult> mapFunc)
+        {
+            return _isLeft 
+                ? Either<TLeft, TResult>.Left(_left) 
+                : Either<TLeft, TResult>.Right(mapFunc(_right));
+        }
     }
 }

@@ -1,5 +1,3 @@
-using Shop.Domain.Orders;
-
 namespace Shop.Infrastructure.Configurations;
 
 public record ClientConfiguration : IEntityTypeConfiguration<Client>

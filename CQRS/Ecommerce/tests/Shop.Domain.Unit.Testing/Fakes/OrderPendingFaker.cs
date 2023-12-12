@@ -1,3 +1,5 @@
+using Shop.Domain.Clients;
+
 namespace Shop.Domain.Unit.Testing.Fakes;
 
 public class OrderPendingFaker : TheoryData<Client, Order, PaymentInfo, Item [], Status>

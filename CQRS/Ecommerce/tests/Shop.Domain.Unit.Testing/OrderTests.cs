@@ -1,3 +1,5 @@
+using Shop.Domain.Clients;
+
 namespace Shop.Domain.Unit.Testing;
 
 public class OrderTests

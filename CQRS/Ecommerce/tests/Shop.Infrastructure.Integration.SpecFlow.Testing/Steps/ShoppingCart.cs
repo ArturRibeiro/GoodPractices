@@ -1,3 +1,5 @@
+using Shop.Api.Reads.Models;
+
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Steps;
 
 internal class ShoppingCart

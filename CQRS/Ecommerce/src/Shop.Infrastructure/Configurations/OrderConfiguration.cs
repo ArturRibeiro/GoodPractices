@@ -1,5 +1,3 @@
-using Shop.Domain.Orders;
-
 namespace Shop.Infrastructure.Configurations;
 
 public record OrderConfiguration : IEntityTypeConfiguration<Order>
@@ -11,6 +9,7 @@ public record OrderConfiguration : IEntityTypeConfiguration<Order>
         builder.HasKey(o => o.Id);
         builder.Property(i => i.Id).ValueGeneratedOnAdd();
         builder.Property(u => u.Registered);
+        builder.Property(u => u.BuyerId);
         builder.HasMany(o => o.Items)
             .WithOne()
             .HasForeignKey(item => item.OrderId);

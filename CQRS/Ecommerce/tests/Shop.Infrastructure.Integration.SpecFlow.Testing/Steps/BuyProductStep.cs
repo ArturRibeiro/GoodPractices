@@ -1,3 +1,4 @@
+using Shop.Api.Reads.Models;
 using TechTalk.SpecFlow.Assist;
 
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Steps;
@@ -46,7 +47,7 @@ public class BuyProductStep
         products.Value.Should().NotBeNull();
         products.Value.Should().HaveCountGreaterThan(1);
         _scenarioContext.Add("Products", products);
-    }
+     }
 
     [Given(@"que o usuário seleciona alguns produto")]
     public async Task GivenQueOUsuarioSelecionaAlgunsProduto()
@@ -75,13 +76,21 @@ public class BuyProductStep
     [Then(@"a compra deve ser concluída com sucesso\.")]
     public async Task ThenACompraDeveSerConcluidaComSucesso()
     {
-        var mutation = MutationGraphql.Instance("checkout")
-            .AddGraphQLInput("productId", 1)
-            .AddGraphQLResult("productId")
+        var t = _shoppingCart.Products.Select(x => new { id = x.Id, quantity = x.QuantityInStock }).ToArray();
+        var jsonProducts = JsonConvert.SerializeObject(t).Replace("\"", " ");
+            
+        var mutation = MutationGraphql
+            .Instance("checkout")
+            .AddQuery(@"shippingAddress: { option: 1 }
+                        products: #PRODUCTS#
+                        creditCard: {
+                          number: ""98756456498654""
+                          expirationDate: ""102028""
+                          cvv: ""011""
+                        }".Replace("#PRODUCTS#", jsonProducts))
+            .AddGraphQLResult("success")
             .Builder();
 
         var result = await this._factory.ExceuteMutationAsyn<ShoppingCart>(mutation);
     }
-
-
 }

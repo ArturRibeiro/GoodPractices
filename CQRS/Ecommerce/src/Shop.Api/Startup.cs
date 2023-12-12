@@ -1,4 +1,4 @@
-using Shop.Api.Graphs.Queries.Products;
+using Shop.Infrastructure;
 
 namespace Shop.Api;
 
@@ -13,6 +13,29 @@ public class Startup
     {
         _builder.Services.AddControllers();
         _builder.Services.AddEndpointsApiExplorer();
+
+        _builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+        _builder.Services.AddScoped<IClientRepository, ClientRepository>();
+        _builder.Services.AddScoped<ICheckoutApp, CheckoutApp>();
+        _builder.Services.AddScoped<IApplicationUser>(_ => new ApplicationUserMock());
+        
+        var currentDirectory = Directory.GetCurrentDirectory();
+        var dataBase = $"Data Source={currentDirectory}\\Shop.db";
+        
+        _builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        {
+            options
+                .UseSqlite(dataBase)
+                .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
+        });
+                
+        _builder.Services.AddDbContext<ApplicationDbContextReadOnly>(options =>
+        {
+            options
+                .UseSqlite(dataBase)
+                .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
+        });
+
         return this;
     }
 
@@ -21,26 +44,30 @@ public class Startup
         _builder.Services
             .AddGraphQLServer()
             .AddQueryType(d => d.Name("Query"))
-                .AddTypeExtension<DummyQuery>()
-                .AddTypeExtension<ProductQuery>()
+            .AddTypeExtension<DummyQuery>()
+            .AddTypeExtension<ProductQuery>()
             .AddMutationType(d => d.Name("Mutation"))
-                .AddTypeExtension<CheckoutServiceMutation>()
-                .AddType<CheckoutMutationGraphType>()
-            
+            .AddTypeExtension<CheckoutServiceMutation>()
+            .AddType<CheckoutMutationGraphType>()
+            .AddType<PaymentInformationGraphType>()
+            .AddType<ProductInformationGraphType>()
+            .AddType<UserShippingAddressInformationGraphType>()
             .AddType<DummyType>()
             .AddType<ProductType>()
-            
             .AddProjections()
             .AddFiltering()
-            //.RegisterDbContext<ApplicationDbContext>()
-            ;
+            .RegisterService<ApplicationUserMock>()
+            .RegisterDbContext<ApplicationDbContextReadOnly>();
         return this;
     }
 
     public Startup AddConfigure()
     {
         var app = _builder.Build();
-        if (app.Environment.IsDevelopment()) { }
+        if (app.Environment.IsDevelopment())
+        {
+        }
+
         app.UseHttpsRedirection();
         app.UseAuthorization();
         app.MapControllers();

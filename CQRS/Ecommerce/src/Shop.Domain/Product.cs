@@ -9,6 +9,8 @@ public class Product : Entity<long>
     
     public Product() { }
 
+    public Product(long id) => this.Id = id;
+
     public Product(string name, string description, double price, int quantityInStock)
     {
         Name = name;

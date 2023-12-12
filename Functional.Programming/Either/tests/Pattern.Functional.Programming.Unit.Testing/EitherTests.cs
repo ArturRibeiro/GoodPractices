@@ -1,8 +1,3 @@
-using System.Collections.ObjectModel;
-using FluentAssertions;
-using Pattern.Functional.Programming.Extensions;
-using Pattern.Functional.Programming.Unit.Testing.Repositorys;
-
 namespace Pattern.Functional.Programming.Unit.Testing
 {
     public class EitherTests
@@ -111,6 +106,22 @@ namespace Pattern.Functional.Programming.Unit.Testing
             // Assert's
             result.Items.Should().HaveCount(1);
             result.Items.ElementAt(0).Id.Should().Be(productId);
+        }
+
+        [Fact]
+        public void Test()
+        {
+            var leftValue = Either<string, int>.Left("Error");
+            var rightValue = Either<string, int>.Right(42);
+
+            var result1 = leftValue.Map(value => value * 2);
+            var result2 = rightValue.Map(value => value * 2);
+
+            string c1 = result1.Match(error => $"Left: {error}", value => $"Right: {value}");
+            var c2 = result2.Map(value => value);
+            
+            Console.WriteLine(c1);
+            Console.WriteLine(c2);
         }
     }
 }

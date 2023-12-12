@@ -1,12 +1,14 @@
 namespace Shop.Api.Graphs.Mutations;
 
 [ExtendObjectType("Mutation")]
-public class CheckoutServiceMutation
+public record CheckoutServiceMutation
 {
     public CheckoutMessageResponse Checkout(
-        CheckoutMessageResponse input /*,
-        [Service] ApplicationDbContext context*/)
+        CheckoutMessageRequest input
+        , [Service] ICheckoutApp checkoutApp)
     {
-        return new CheckoutMessageResponse(input.ProductId);
+        checkoutApp.Checkout(input);
+        
+        return new CheckoutMessageResponse(true);
     }
 }

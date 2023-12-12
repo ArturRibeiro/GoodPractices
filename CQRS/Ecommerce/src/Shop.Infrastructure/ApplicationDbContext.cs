@@ -1,8 +1,6 @@
-using Shop.Domain.Orders;
-
 namespace Shop.Infrastructure;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : DbContext, IUnitOfWork
 {
     public DbSet<Product> Products { get; set; }
     public DbSet<Order> Orders { get; set; }
@@ -18,5 +16,11 @@ public class ApplicationDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+    }
+    
+    public async Task<bool> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
+    {
+        var result = await base.SaveChangesAsync(cancellationToken);
+        return result > 0;
     }
 }

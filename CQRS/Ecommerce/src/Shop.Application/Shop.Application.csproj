@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\Functional.Programming\Either\src\Pattern.Functional.Programming.csproj" />
+      <ProjectReference Include="..\Shop.Domain\Shop.Domain.csproj" />
+      <ProjectReference Include="..\Shop.Infrastructure\Shop.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Extensions\" />
+    </ItemGroup>
+
+</Project>

@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Graphs\Mutations\Checkout\Types\" />
+      <ProjectReference Include="..\Shop.Application\Shop.Application.csproj" />
     </ItemGroup>
 
 </Project>

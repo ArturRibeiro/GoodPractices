@@ -1,0 +1,9 @@
+global using FizzWare.NBuilder;
+global using Moq;
+global using Shop.Application.Checkouts.Imp;
+global using Shop.Application.Unit.Testing.Fakers;
+global using Shop.Domain.Clients;
+global using Shop.Domain.Orders;
+global using Shop.Domain.SharedKernel;
+global using Shop.Infrastructure.Abstractions;
+global using Xunit;

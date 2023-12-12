@@ -1,6 +1,4 @@
-﻿using Shop.Domain.Orders;
-
-namespace Shop.Infrastructure.Configurations;
+﻿namespace Shop.Infrastructure.Configurations;
 
 public record ItemConfiguration : IEntityTypeConfiguration<Item>
 {
@@ -10,7 +8,8 @@ public record ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(i => i.Id).ValueGeneratedOnAdd();
         builder.Property(i => i.Quantity);
         builder.Property(i => i.OrderId);
-        
-        builder.HasOne(i => i.Product);
+        builder.Property(i => i.ProductId).IsRequired();
+
+        builder.Ignore(x => x.Product);
     }
 }

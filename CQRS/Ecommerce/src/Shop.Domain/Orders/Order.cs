@@ -1,33 +1,49 @@
+
 namespace Shop.Domain.Orders;
 
 public class Order : Entity<long>
 {
     private readonly List<Item> _items = new();
-    
-    public ReadOnlyCollection<Item> Items => _items.AsReadOnly();
+
+    public IEnumerable<Item> Items => _items.AsReadOnly();
     public double TotalPrice { get; private set; }
     public Client Buyer { get; private set; }
-    public DateTime Registered { get; private set; }
+    public long BuyerId { get; private set; }
+    public DateTime Registered { get; private set; } = DateTime.Now;
 
     public Status Status { get; private set; } = Status.Pending;
 
-    public Order() { }
-    
+    public Order()
+    {
+    }
+
     public Order Checkout()
     {
         this.Status = Status.AwaitingPayment;
-        TotalPrice = _items.Sum(x => x.Product.Price);
+        TotalPrice = 0;//_items.Sum(x => x.Product.Price);
         return this;
     }
 
-    public Order AddItem(Client client, params Item [] items)
+    public Order AddItem(Client client, params Item[] items)
     {
         _items.AddRange(items);
         this.Buyer = client;
         return this;
     }
+
+    public Order AddClient(Client client )
+    {
+        this.BuyerId = client.Id;
+        return this;
+    }
     
-    public Order RemoveItem(params Item [] items)
+    public Order AddItem(Func<IEnumerable<Item>> fItems )
+    {
+        _items.AddRange(fItems());
+        return this;
+    }
+
+    public Order RemoveItem(params Item[] items)
     {
         _items.AddRange(items);
         return this;
@@ -49,5 +65,10 @@ public class Order : Entity<long>
     {
         this.Status = Status.Completed;
         return this;
+    }
+
+    public record Factory
+    {
+        public static Order Create() => new();
     }
 }
