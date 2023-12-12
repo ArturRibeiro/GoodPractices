@@ -1,4 +1,5 @@
 # User-specific files
+.vscode/
 *.suo
 *.user
 *.sln.docstates
@@ -17,3 +18,4 @@ x64/
 *.db
 *.db-shm
 *.db-wal
+*.sqlite
