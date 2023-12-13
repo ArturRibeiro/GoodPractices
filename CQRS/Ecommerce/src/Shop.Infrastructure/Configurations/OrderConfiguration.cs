@@ -16,6 +16,12 @@ public record OrderConfiguration : IEntityTypeConfiguration<Order>
 
         builder.HasOne(o => o.Buyer);
         
+        builder.OwnsOne(o => o.TotalPrice
+            , oneBuilder =>
+            {
+                oneBuilder.Property(x => x.Value).HasColumnName("TotalPrice");
+            });
+        
         builder.OwnsOne(o => o.Status
             , oneBuilder =>
             {

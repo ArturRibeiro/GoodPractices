@@ -1,5 +1,3 @@
-using Shop.Domain.Clients;
-
 namespace Shop.Domain.Unit.Testing.Fakes;
 
 public class OrderShippedFaker : TheoryData<Order, PaymentInfo, Status>
@@ -11,7 +9,7 @@ public class OrderShippedFaker : TheoryData<Order, PaymentInfo, Status>
 
         var product = new Faker<Product>()
             .RuleFor(p => p.Name, p => p.Commerce.Product())
-            .RuleFor(p => p.Price, p => double.Parse(p.Commerce.Price()))
+            .RuleFor(p => p.Price, p => decimal.Parse(p.Commerce.Price()))
             .RuleFor(p => p.QuantityInStock, p => p.Random.Int(1, 10))
             .Generate();
 
@@ -40,7 +38,7 @@ public class OrderCancelledFaker : TheoryData<Order, PaymentInfo, Status>
 
         var product = new Faker<Product>()
             .RuleFor(p => p.Name, p => p.Commerce.Product())
-            .RuleFor(p => p.Price, p => double.Parse(p.Commerce.Price()))
+            .RuleFor(p => p.Price, p => decimal.Parse(p.Commerce.Price()))
             .RuleFor(p => p.QuantityInStock, p => p.Random.Int(1, 10))
             .Generate();
 

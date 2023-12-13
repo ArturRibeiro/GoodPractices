@@ -10,7 +10,7 @@ public class ProductType: ObjectType<ProductReadModel>
         descriptor.Field(u => u.Id).Description("Product id");
         descriptor.Field(u => u.Name).Description("Product name");
         descriptor.Field(u => u.Description).Description("Product description");
-        descriptor.Field(u => u.Price).Description("Product price");
+        descriptor.Field(u => u.UnitPrice).Description("Product price");
         descriptor.Field(u => u.QuantityInStock).Description("Product quantity in stock");
     }
 }

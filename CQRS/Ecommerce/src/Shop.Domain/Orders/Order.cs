@@ -6,7 +6,7 @@ public class Order : Entity<long>
     private readonly List<Item> _items = new();
 
     public IEnumerable<Item> Items => _items.AsReadOnly();
-    public double TotalPrice { get; private set; }
+    public UnitPrice TotalPrice { get; private set; }
     public Client Buyer { get; private set; }
     public long BuyerId { get; private set; }
     public DateTime Registered { get; private set; } = DateTime.Now;
@@ -20,7 +20,7 @@ public class Order : Entity<long>
     public Order Checkout()
     {
         this.Status = Status.AwaitingPayment;
-        TotalPrice = 0;//_items.Sum(x => x.Product.Price);
+        TotalPrice = _items.Sum(x => x.Subtotal);
         return this;
     }
 

@@ -9,7 +9,7 @@ public record ProductConfiguration : IEntityTypeConfiguration<ProductReadModel>
         builder.HasKey(p => p.Id);
         builder.Property(p => p.Name);
         builder.Property(p => p.Description);
-        builder.Property(p => p.Price);
+        builder.Property(p => p.UnitPrice);
         builder.Property(p => p.QuantityInStock);
     }
 }

@@ -1,8 +1,15 @@
-namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Utils;
+namespace Shop.Infrastructure.Seed;
 
-public static class ApplicationDBContextExtension
+public static class ApplicationDbContextExtension
 {
-    public static void Seed(this ApplicationDbContext @this)
+    public static void Seed(this WebApplication @this)
+    {
+        var context =  @this.Services.CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        context.Database.EnsureDeleted();
+        context.Database.EnsureCreated();
+        context.Seed();
+    }
+    private static void Seed(this ApplicationDbContext @this)
     {
         @this.Clients.AddClients();
         @this.Products.AddProducts();
@@ -15,7 +22,7 @@ public static class ApplicationDBContextExtension
             .RuleFor(p => p.Id, f => 0)
             .RuleFor(p => p.Name, f => f.Commerce.ProductName())
             .RuleFor(p => p.Description, f => f.Commerce.ProductDescription())
-            .RuleFor(p => p.Price, p => double.Parse(p.Commerce.Price(100, 1000, 2, null)))
+            .RuleFor(p => p.Price, p => decimal.Parse(p.Commerce.Price(100, 1000, 2, null)))
             .RuleFor(p => p.QuantityInStock, f => f.Random.Number(1, 100))
             .Generate(30);
         

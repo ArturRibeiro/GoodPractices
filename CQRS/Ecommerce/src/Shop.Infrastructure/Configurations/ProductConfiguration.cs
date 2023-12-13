@@ -15,8 +15,11 @@ public record ProductConfiguration : IEntityTypeConfiguration<Product>
         builder.Property(p => p.Description)
             .IsRequired();
 
-        builder.Property(p => p.Price)
-            .IsRequired();
+        builder.OwnsOne(o => o.Price
+            , oneBuilder =>
+            {
+                oneBuilder.Property(x => x.Value).HasColumnName("UnitPrice");
+            });
 
         builder.Property(p => p.QuantityInStock)
             .IsRequired();

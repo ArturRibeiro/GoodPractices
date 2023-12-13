@@ -5,7 +5,9 @@ public record CheckoutServiceMutation
 {
     public CheckoutMessageResponse Checkout(
         CheckoutMessageRequest input
-        , [Service] ICheckoutApp checkoutApp)
+        , [Service] ICheckoutApp checkoutApp
+        , [Service] IServiceClient serviceClient
+        )
     {
         checkoutApp.Checkout(input);
         

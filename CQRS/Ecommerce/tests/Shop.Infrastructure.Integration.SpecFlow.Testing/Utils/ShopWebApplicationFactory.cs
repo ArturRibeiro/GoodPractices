@@ -1,4 +1,7 @@
 using Shop.Api.Reads;
+using Shop.Application.Checkouts;
+using Shop.Application.Checkouts.Imp;
+using Shop.Infrastructure.Integration.SpecFlow.Testing.Mocks;
 
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Utils;
 
@@ -16,24 +19,27 @@ public class ShopWebApplicationFactory : WebApplicationFactory<Program>, IAsyncL
                 // TODO: Possibilita remover serviços e configurar de acordo com a fronteira ...
                 //services.Replace<MyIInterface>(sp => new MyInterface(), ServiceLifetime.Singleton);
                 
-                services
-                    .Remove<ApplicationDbContext>()
-                    .Remove<ApplicationDbContextReadOnly>()
-                    .Remove<DbConnection>();
+                // services
+                //     .Remove<ApplicationDbContext>()
+                //     .Remove<ApplicationDbContextReadOnly>()
+                //     .Remove<ServiceClient>()
+                //     .Remove<DbConnection>();
                 
-                services.AddDbContext<ApplicationDbContext>(options =>
-                {
-                    options
-                        .UseSqlite(dataBase)
-                        .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
-                });
-                
-                services.AddDbContext<ApplicationDbContextReadOnly>(options =>
-                {
-                    options
-                        .UseSqlite(dataBase)
-                        .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
-                });
+                // services.AddDbContext<ApplicationDbContext>(options =>
+                // {
+                //     options
+                //         .UseSqlite(dataBase)
+                //         .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
+                // });
+                //
+                // services.AddDbContext<ApplicationDbContextReadOnly>(options =>
+                // {
+                //     options
+                //         .UseSqlite(dataBase)
+                //         .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
+                // });
+
+                services.AddScoped<IServiceClient, ServiceClientMock>();
             });
 
         base.ConfigureWebHost(builder);
@@ -69,30 +75,6 @@ public class ShopWebApplicationFactory : WebApplicationFactory<Program>, IAsyncL
             .SetResult();
     }
     
-    public async Task<Result<T>> ExceuteMutationAsyn<T>(string name, string mutationGraphql)
-        where T : class
-    {
-        
-        // var TEMPLATE = @"#NAME#(input: { #VALUE# }) {
-        //                     #RESULT#
-        //                  }";
-        //
-        // var result = TEMPLATE
-        //     .Replace("#NAME#", name)
-        //     .Replace("#VALUE#", value)
-        //     .Replace("#RESULT#", GraphqlResultValues);
-        
-        //var queryObject = new { query = "mutation {" + result +"}" };
-        
-        var message = ShopWebApplicationFactoryHelper.CreateHttpRequestMessage(HttpMethod.Post, mutationGraphql);
-        using var response = await base.CreateClient().SendAsync(message);
-        return response
-            .SuccessStatusCode()
-            .ReadAsStringAsync<T>(name)
-            .ParseGraphQlResultToJson<T>()
-            .SetResult();
-    }
-
     public async Task InitializeAsync()
     {
     }

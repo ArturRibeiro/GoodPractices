@@ -1,4 +1,5 @@
 using Shop.Infrastructure;
+using Shop.Infrastructure.Seed;
 
 namespace Shop.Api;
 
@@ -17,6 +18,7 @@ public class Startup
         _builder.Services.AddScoped<IOrderRepository, OrderRepository>();
         _builder.Services.AddScoped<IClientRepository, ClientRepository>();
         _builder.Services.AddScoped<ICheckoutApp, CheckoutApp>();
+        _builder.Services.AddScoped<IServiceClient, ServiceClient>();
         _builder.Services.AddScoped<IApplicationUser>(_ => new ApplicationUserMock());
         
         var currentDirectory = Directory.GetCurrentDirectory();
@@ -81,6 +83,7 @@ public class Startup
 
     public Startup Run()
     {
+        _app.Seed();
         _app.Run();
         return this;
     }

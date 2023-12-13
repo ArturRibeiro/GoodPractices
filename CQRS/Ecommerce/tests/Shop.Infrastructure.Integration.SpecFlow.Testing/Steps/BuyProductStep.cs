@@ -1,3 +1,4 @@
+using System.Collections;
 using Shop.Api.Reads.Models;
 using TechTalk.SpecFlow.Assist;
 
@@ -39,7 +40,7 @@ public class BuyProductStep
     public async Task GivenQueOUsuarioVisualizeTodosOsProduto()
     {
         var queryGraphql = QueryGraphql
-            .Instance("products", "id name description price quantityInStock")
+            .Instance("products", "id name description unitPrice quantityInStock")
             .Builder();
         
         var products = await _factory.SendQuery<List<ProductReadModel>>(queryGraphql);
@@ -54,6 +55,7 @@ public class BuyProductStep
     {
         var allProduct = _scenarioContext.Get<Result<List<ProductReadModel>>>("Products");
         var chosenProducts = allProduct.RandomSelection(4);
+        foreach (var productReadModel in chosenProducts) productReadModel.QuantityInStock = 1;
         _scenarioContext.Add("ChosenProducts", chosenProducts);
     }
 
