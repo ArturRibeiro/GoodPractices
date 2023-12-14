@@ -1,5 +1,3 @@
-using Shop.Application.Checkouts;
-
 namespace Shop.Application.Unit.Testing;
 
 public class CheckoutAppTests
@@ -12,7 +10,7 @@ public class CheckoutAppTests
     
     [Theory]
     [ClassData(typeof(CheckoutMessageRequestFaker))]
-    public void CheckoutSuccess(CheckoutMessageRequest request, Client client)
+    public async Task CheckoutSuccess(CheckoutMessageRequest request, Client client)
     {
         // Stub's
         _clientRepository.Setup(x => x.GetById(It.IsAny<long>())).Returns(client);
@@ -21,7 +19,7 @@ public class CheckoutAppTests
         var app = new CheckoutApp(_applicationUser.Object, _orderRepository.Object, _clientRepository.Object, _serviceClient.Object);
 
         // Act
-        var result = app.Checkout(request);
+        var result = app.Handle(request, CancellationToken.None);
         
         //Assert's
         _orderRepository.Verify(x => x.Add(It.IsAny<Order>()), Times.Once);

@@ -1,7 +1,5 @@
 using Shop.Api.Reads;
-using Shop.Application.Checkouts;
-using Shop.Application.Checkouts.Imp;
-using Shop.Infrastructure.Integration.SpecFlow.Testing.Mocks;
+using ServiceClientMock = Shop.Infrastructure.Integration.SpecFlow.Testing.Mocks.ServiceClientMock;
 
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Utils;
 
@@ -17,29 +15,8 @@ public class ShopWebApplicationFactory : WebApplicationFactory<Program>, IAsyncL
             .ConfigureTestServices(services =>
             {
                 // TODO: Possibilita remover serviços e configurar de acordo com a fronteira ...
-                //services.Replace<MyIInterface>(sp => new MyInterface(), ServiceLifetime.Singleton);
-                
-                // services
-                //     .Remove<ApplicationDbContext>()
-                //     .Remove<ApplicationDbContextReadOnly>()
-                //     .Remove<ServiceClient>()
-                //     .Remove<DbConnection>();
-                
-                // services.AddDbContext<ApplicationDbContext>(options =>
-                // {
-                //     options
-                //         .UseSqlite(dataBase)
-                //         .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
-                // });
-                //
-                // services.AddDbContext<ApplicationDbContextReadOnly>(options =>
-                // {
-                //     options
-                //         .UseSqlite(dataBase)
-                //         .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
-                // });
-
-                services.AddScoped<IServiceClient, ServiceClientMock>();
+                services.Replace<IApplicationUser>(_ => new ApplicationUserMock(), ServiceLifetime.Singleton);
+                services.Replace<IServiceClient>(sp => new ServiceClientMock(sp.GetRequiredService<ApplicationDbContextReadOnly>()), ServiceLifetime.Scoped);
             });
 
         base.ConfigureWebHost(builder);

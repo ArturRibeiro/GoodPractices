@@ -1,4 +1,8 @@
+using Shop.Api.Reads;
+using Shop.Application.Extensions;
 using Shop.Infrastructure;
+using Shop.Infrastructure.Extensions;
+using Shop.Infrastructure.Reads;
 using Shop.Infrastructure.Seed;
 
 namespace Shop.Api;
@@ -14,30 +18,18 @@ public class Startup
     {
         _builder.Services.AddControllers();
         _builder.Services.AddEndpointsApiExplorer();
-
-        _builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-        _builder.Services.AddScoped<IClientRepository, ClientRepository>();
-        _builder.Services.AddScoped<ICheckoutApp, CheckoutApp>();
-        _builder.Services.AddScoped<IServiceClient, ServiceClient>();
-        _builder.Services.AddScoped<IApplicationUser>(_ => new ApplicationUserMock());
+        _builder.Services.AddApplicationModule();
+        _builder.Services.AddInfrastructureModule();
         
-        var currentDirectory = Directory.GetCurrentDirectory();
-        var dataBase = $"Data Source={currentDirectory}\\Shop.db";
-        
-        _builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        {
-            options
-                .UseSqlite(dataBase)
-                .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
-        });
-                
         _builder.Services.AddDbContext<ApplicationDbContextReadOnly>(options =>
         {
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var dataBase = $"Data Source={currentDirectory}\\Shop.db";
             options
                 .UseSqlite(dataBase)
                 .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
         });
-
+        
         return this;
     }
 
@@ -58,7 +50,7 @@ public class Startup
             .AddType<ProductType>()
             .AddProjections()
             .AddFiltering()
-            .RegisterService<ApplicationUserMock>()
+            .RegisterService<IApplicationUser>()
             .RegisterDbContext<ApplicationDbContextReadOnly>();
         return this;
     }

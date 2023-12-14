@@ -1,6 +1,6 @@
 namespace Shop.Infrastructure.Abstractions.Impl;
 
-public class ApplicationUserMock : IApplicationUser
+public class ApplicationUser : IApplicationUser
 {
     public int UserId => 1;
     public string Name => "Ribeiro";

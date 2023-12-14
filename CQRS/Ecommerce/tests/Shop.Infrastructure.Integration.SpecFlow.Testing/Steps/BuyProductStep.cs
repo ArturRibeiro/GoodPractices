@@ -1,5 +1,6 @@
 using System.Collections;
-using Shop.Api.Reads.Models;
+using Shop.Infrastructure.Integration.SpecFlow.Testing.Steps.Contracts;
+using Shop.Infrastructure.Reads.Models;
 using TechTalk.SpecFlow.Assist;
 
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Steps;
@@ -21,21 +22,6 @@ public class BuyProductStep
         _shoppingCart = new ShoppingCart();
     }
 
-    
-
-
-    // [When(@"o usuário inicia o processo de checkout")]
-    // public void WhenOUsuarioRealizaOCheckout(Table table)
-    // {
-    //     var fromStep = table.CreateInstance<PaymentInformation>();
-    //     
-    //     // // Assertions
-    //     // si.Title.Should().Equal(fromStep.CardValidityData);
-    //     // si.Tags.Should().BeEquivalentTo(fromStep.Tags);
-    //     // si.CombinedTags.Should().BeEquivalentTo(fromStep.CombinedTags);
-    // }
-
-
     [Given(@"que o usuário visualize todos os produto")]
     public async Task GivenQueOUsuarioVisualizeTodosOsProduto()
     {
@@ -43,7 +29,7 @@ public class BuyProductStep
             .Instance("products", "id name description unitPrice quantityInStock")
             .Builder();
         
-        var products = await _factory.SendQuery<List<ProductReadModel>>(queryGraphql);
+        var products = await _factory.SendQuery<List<ProductDto>>(queryGraphql);
         products.Should().NotBeNull();
         products.Value.Should().NotBeNull();
         products.Value.Should().HaveCountGreaterThan(1);
@@ -53,7 +39,7 @@ public class BuyProductStep
     [Given(@"que o usuário seleciona alguns produto")]
     public async Task GivenQueOUsuarioSelecionaAlgunsProduto()
     {
-        var allProduct = _scenarioContext.Get<Result<List<ProductReadModel>>>("Products");
+        var allProduct = _scenarioContext.Get<Result<List<ProductDto>>>("Products");
         var chosenProducts = allProduct.RandomSelection(4);
         foreach (var productReadModel in chosenProducts) productReadModel.QuantityInStock = 1;
         _scenarioContext.Add("ChosenProducts", chosenProducts);
@@ -61,7 +47,7 @@ public class BuyProductStep
 
     [Given(@"adiciona no carrinho de compras")]
     public void GivenAdicionaNoCarrinhoDeCompras() 
-        => _shoppingCart.AddProducts(_scenarioContext.Get<List<ProductReadModel>>("ChosenProducts"));
+        => _shoppingCart.AddProducts(_scenarioContext.Get<List<ProductDto>>("ChosenProducts"));
 
     [When(@"o usuário inicia o processo de checkout")]
     public async Task WhenOUsuarioIniciaOProcessoDeCheckout() 

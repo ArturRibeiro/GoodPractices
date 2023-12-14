@@ -1,3 +1,6 @@
+using Shop.Api.Reads;
+using Shop.Infrastructure.Reads;
+
 namespace Shop.Api.Graphs.Queries.Products;
 
 [ExtendObjectType("Query")]

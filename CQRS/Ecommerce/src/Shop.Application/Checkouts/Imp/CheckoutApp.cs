@@ -1,6 +1,6 @@
 namespace Shop.Application.Checkouts.Imp;
 
-public class CheckoutApp : ICheckoutApp
+public class CheckoutApp : IRequestHandler<CheckoutMessageRequest>
 {
     private readonly IApplicationUser _applicationUser;
     private readonly IOrderRepository _orderRepository;
@@ -18,8 +18,7 @@ public class CheckoutApp : ICheckoutApp
         _serviceClient = serviceClient;
     }
 
-    public async Task<Either<Exception, CheckoutMessageResponse>> Checkout(
-        CheckoutMessageRequest request)
+    public async Task Handle(CheckoutMessageRequest request, CancellationToken cancellationToken)
     {
         var productReadModels = await _serviceClient.GetProductPrices(request.Products);
 
@@ -39,8 +38,6 @@ public class CheckoutApp : ICheckoutApp
         // 1 - Confirmar Pagamento
         // 2 - Da baixa no estoque
         // 3 - Enviar o emial de pedido concluído
-
-        return new Right<Exception, CheckoutMessageResponse>(new CheckoutMessageResponse(true));
     }
 
     private static IEnumerable<Item> GetItems(

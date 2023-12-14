@@ -1,5 +1,6 @@
 global using FizzWare.NBuilder;
 global using Moq;
+global using Shop.Application.Checkouts;
 global using Shop.Application.Checkouts.Imp;
 global using Shop.Application.Unit.Testing.Fakers;
 global using Shop.Domain.Clients;

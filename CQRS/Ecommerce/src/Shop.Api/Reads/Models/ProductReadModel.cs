@@ -1,10 +1,10 @@
-namespace Shop.Api.Reads.Models;
+namespace Shop.Infrastructure.Reads.Models;
 
-public class ProductReadModel
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public decimal UnitPrice { get; set; }
-    public int QuantityInStock { get; set; }
-}
+public record ProductReadModel
+(
+    int Id,
+    string Name,
+    string Description,
+    decimal UnitPrice,
+    int QuantityInStock
+);

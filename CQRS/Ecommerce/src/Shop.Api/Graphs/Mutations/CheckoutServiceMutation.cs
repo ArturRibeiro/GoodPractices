@@ -1,3 +1,6 @@
+using Shop.Application.Extensions;
+using Shop.Infrastructure.Mediators;
+
 namespace Shop.Api.Graphs.Mutations;
 
 [ExtendObjectType("Mutation")]
@@ -5,11 +8,9 @@ public record CheckoutServiceMutation
 {
     public CheckoutMessageResponse Checkout(
         CheckoutMessageRequest input
-        , [Service] ICheckoutApp checkoutApp
-        , [Service] IServiceClient serviceClient
-        )
+        , [Service] MediatorService service)
     {
-        checkoutApp.Checkout(input);
+        service.Send(input);
         
         return new CheckoutMessageResponse(true);
     }

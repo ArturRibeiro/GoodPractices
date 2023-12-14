@@ -1,18 +1,19 @@
-using Shop.Api.Reads.Models;
+using Shop.Infrastructure.Integration.SpecFlow.Testing.Steps.Contracts;
+using Shop.Infrastructure.Reads.Models;
 
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Steps;
 
 internal class ShoppingCart
 {
-    private List<ProductReadModel> _products;
+    private List<ProductDto> _products;
     private DeliveryInformation _deliveryInformation;
     private PaymentInformation _paymentInformation;
 
-    public IReadOnlyCollection<ProductReadModel> Products => _products.AsReadOnly();
+    public IReadOnlyCollection<ProductDto> Products => _products.AsReadOnly();
     public DeliveryInformation DeliveryInformation => _deliveryInformation;
     public PaymentInformation PaymentInformation => _paymentInformation;
 
-    public void AddProducts(List<ProductReadModel> products) => _products = products;
+    public void AddProducts(List<ProductDto> products) => _products = products;
     public void AddDeliveryInformation(DeliveryInformation deliveryInformation) => _deliveryInformation = deliveryInformation;
     public void AddPaymentInformation(PaymentInformation paymentInformation) => _paymentInformation = paymentInformation;
 
