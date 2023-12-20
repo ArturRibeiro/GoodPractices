@@ -5,7 +5,7 @@ public class Item : Entity<long>
     public Product Product { get; private set; }
     public long ProductId { get; private set; }
     public int Quantity { get; private set; }
-    public UnitPrice UnitPrice { get; private set; }
+    public Price UnitPrice { get; private set; }
     public long OrderId { get; private set; }
 
     public Item() { }

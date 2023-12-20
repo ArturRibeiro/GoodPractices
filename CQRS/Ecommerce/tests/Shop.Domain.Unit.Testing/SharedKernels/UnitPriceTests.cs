@@ -9,7 +9,7 @@ public class UnitPriceTests
         decimal validValue = 42.56m;
 
         // Act
-        UnitPrice unitPrice = validValue;
+        Price unitPrice = validValue;
 
         // Assert
         unitPrice.Should().NotBeNull();
@@ -22,7 +22,7 @@ public class UnitPriceTests
     public void Create_InvalidValue_ShouldThrowException(decimal invalidValue)
     {
         // Assert
-        Action action = () => { UnitPrice unitPrice = invalidValue; };
+        Action action = () => { Price unitPrice = invalidValue; };
         action.Should().Throw<ArgumentException>().WithMessage("O valor da unidade de preço não pode ser negativo.");
     }
 
@@ -30,7 +30,7 @@ public class UnitPriceTests
     public void ToString_FormattingShouldBeCorrect()
     {
         // Arrange
-        UnitPrice unitPrice = 42.56m;
+        Price unitPrice = 42.56m;
 
         // Act
         string result = unitPrice.ToString();
@@ -43,8 +43,8 @@ public class UnitPriceTests
     public void Equals_TwoEqualPrices_ShouldReturnTrue()
     {
         // Arrange
-        UnitPrice price1 = 42.56m;
-        UnitPrice price2 = 42.56m;
+        Price price1 = 42.56m;
+        Price price2 = 42.56m;
 
         // Act
         bool result = price1.Equals(price2);
@@ -57,8 +57,8 @@ public class UnitPriceTests
     public void Equals_TwoDifferentPrices_ShouldReturnFalse()
     {
         // Arrange
-        UnitPrice price1 = 42.56m;
-        UnitPrice price2 = 30.00m;
+        Price price1 = 42.56m;
+        Price price2 = 30.00m;
 
         // Act
         bool result = price1.Equals(price2);

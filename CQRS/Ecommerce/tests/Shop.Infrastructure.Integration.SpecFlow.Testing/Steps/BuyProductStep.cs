@@ -64,18 +64,21 @@ public class BuyProductStep
     [Then(@"a compra deve ser concluída com sucesso\.")]
     public async Task ThenACompraDeveSerConcluidaComSucesso()
     {
-        var t = _shoppingCart.Products.Select(x => new { id = x.Id, quantity = x.QuantityInStock }).ToArray();
-        var jsonProducts = JsonConvert.SerializeObject(t).Replace("\"", " ");
-            
+        var products = _shoppingCart.Products.Select(x => new { id = x.Id, quantity = x.QuantityInStock }).ToArray();
+        var creditCard = new {number = _shoppingCart.PaymentInformation.CreditCardNumber, expirationDate = _shoppingCart.PaymentInformation.CardValidityData, cvv = _shoppingCart.PaymentInformation.CVV};
+        var jsonProducts = JsonConvert.SerializeObject(products).Replace("\"", " ");
+        var jsonCreditCard = JsonConvert.SerializeObject(creditCard).Replace("\"", " ");
+        
+        //{ CreditCardNumber : 4689574998955706 , CardValidityData : 10/12/2023 , CVV : 459 }
+
         var mutation = MutationGraphql
             .Instance("checkout")
             .AddQuery(@"shippingAddress: { option: 1 }
                         products: #PRODUCTS#
-                        creditCard: {
-                          number: ""98756456498654""
-                          expirationDate: ""102028""
-                          cvv: ""011""
-                        }".Replace("#PRODUCTS#", jsonProducts))
+                        creditCard: #CREDITCARD#"
+                .Replace("#PRODUCTS#", jsonProducts)
+                .Replace("#CREDITCARD#", jsonCreditCard)
+            )
             .AddGraphQLResult("success")
             .Builder();
 

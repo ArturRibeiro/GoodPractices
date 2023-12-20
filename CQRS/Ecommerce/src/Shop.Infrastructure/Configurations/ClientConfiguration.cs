@@ -15,14 +15,5 @@ public record ClientConfiguration : IEntityTypeConfiguration<Client>
                 oneBuilder.Property(x => x.Country).HasColumnName("Country");
                 oneBuilder.Property(x => x.ZipCode).HasColumnName("ZipCode");
             });
-        
-        builder.OwnsOne(o => o.Payment
-            , oneBuilder =>
-            {
-                oneBuilder.ToTable("PaymentInfo");
-                oneBuilder.Property(x => x.ExpirationDate).HasColumnName("ExpirationDate");
-                oneBuilder.Property(x => x.CardNumber).HasColumnName("CardNumber");
-                oneBuilder.Property(x => x.Cvv).HasColumnName("Cvv");
-            });
     }
 }

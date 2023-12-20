@@ -6,11 +6,14 @@ public class Order : Entity<long>
     private readonly List<Item> _items = new();
 
     public IEnumerable<Item> Items => _items.AsReadOnly();
-    public UnitPrice TotalPrice { get; private set; }
+    public Price TotalPrice { get; private set; }
     public Client Buyer { get; private set; }
-    public long BuyerId { get; private set; }
+    public long ClientId { get; private set; }
+    
+    public PaymentInfo Payment { get; private set; }
+    public long PaymentId { get; private set; }
+    
     public DateTime Registered { get; private set; } = DateTime.Now;
-
     public Status Status { get; private set; } = Status.Pending;
 
     public Order()
@@ -33,7 +36,7 @@ public class Order : Entity<long>
 
     public Order AddClient(Client client )
     {
-        this.BuyerId = client.Id;
+        this.ClientId = client.Id;
         return this;
     }
     
