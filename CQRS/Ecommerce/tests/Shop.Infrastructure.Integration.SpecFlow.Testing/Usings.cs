@@ -21,6 +21,7 @@ global using Shop.Domain.Orders;
 global using Shop.Infrastructure.Abstractions;
 global using Shop.Infrastructure.Integration.SpecFlow.Testing.Mocks;
 global using Shop.Infrastructure.Integration.SpecFlow.Testing.Steps;
+global using Shop.Infrastructure.Integration.SpecFlow.Testing.Steps.Contracts;
 global using Shop.Infrastructure.Integration.SpecFlow.Testing.Utils;
 global using Shop.Infrastructure.Reads;
 global using Xunit;

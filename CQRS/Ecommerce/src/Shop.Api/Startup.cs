@@ -75,7 +75,7 @@ public class Startup
 
     public Startup Run()
     {
-        _app.Seed();
+        using (var scope = _app.Services.CreateScope()) scope.ServiceProvider.Initialize();
         _app.Run();
         return this;
     }

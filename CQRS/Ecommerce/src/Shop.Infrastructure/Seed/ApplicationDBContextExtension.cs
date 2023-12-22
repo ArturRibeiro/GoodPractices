@@ -2,9 +2,9 @@ namespace Shop.Infrastructure.Seed;
 
 public static class ApplicationDbContextExtension
 {
-    public static void Seed(this WebApplication @this)
+    public static void Initialize(this IServiceProvider @this)
     {
-        var context =  @this.Services.CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        var context =  @this.GetRequiredService<ApplicationDbContext>();
         context.Database.EnsureDeleted();
         context.Database.EnsureCreated();
         context.Seed();

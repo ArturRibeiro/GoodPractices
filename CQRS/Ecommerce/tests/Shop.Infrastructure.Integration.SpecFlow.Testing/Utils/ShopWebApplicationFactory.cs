@@ -1,3 +1,4 @@
+using Microsoft.Extensions.FileProviders;
 using Shop.Api.Reads;
 using ServiceClientMock = Shop.Infrastructure.Integration.SpecFlow.Testing.Mocks.ServiceClientMock;
 
@@ -11,7 +12,7 @@ public class ShopWebApplicationFactory : WebApplicationFactory<Program>, IAsyncL
         var dataBase = $"Data Source={currentDirectory}\\ShopSpecFlow.db";
         builder.UseContentRoot(currentDirectory);
         builder
-            .ConfigureAppConfiguration(config => config.AddJsonFile($"{currentDirectory}\\appsettings.specflow.json"))
+            .ConfigureAppConfiguration(config => { config.AddJsonFile($"{currentDirectory}/appsettings.specflow.json"); })
             .ConfigureTestServices(services =>
             {
                 // TODO: Possibilita remover serviços e configurar de acordo com a fronteira ...

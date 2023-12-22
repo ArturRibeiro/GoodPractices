@@ -1,6 +1,3 @@
-using System.Collections;
-using Shop.Infrastructure.Integration.SpecFlow.Testing.Steps.Contracts;
-using Shop.Infrastructure.Reads.Models;
 using TechTalk.SpecFlow.Assist;
 
 namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Steps;
@@ -64,24 +61,6 @@ public class BuyProductStep
     [Then(@"a compra deve ser concluída com sucesso\.")]
     public async Task ThenACompraDeveSerConcluidaComSucesso()
     {
-        var products = _shoppingCart.Products.Select(x => new { id = x.Id, quantity = x.QuantityInStock }).ToArray();
-        var creditCard = new {number = _shoppingCart.PaymentInformation.CreditCardNumber, expirationDate = _shoppingCart.PaymentInformation.CardValidityData, cvv = _shoppingCart.PaymentInformation.CVV};
-        var jsonProducts = JsonConvert.SerializeObject(products).Replace("\"", " ");
-        var jsonCreditCard = JsonConvert.SerializeObject(creditCard).Replace("\"", " ");
-        
-        //{ CreditCardNumber : 4689574998955706 , CardValidityData : 10/12/2023 , CVV : 459 }
-
-        var mutation = MutationGraphql
-            .Instance("checkout")
-            .AddQuery(@"shippingAddress: { option: 1 }
-                        products: #PRODUCTS#
-                        creditCard: #CREDITCARD#"
-                .Replace("#PRODUCTS#", jsonProducts)
-                .Replace("#CREDITCARD#", jsonCreditCard)
-            )
-            .AddGraphQLResult("success")
-            .Builder();
-
-        var result = await this._factory.ExceuteMutationAsyn<ShoppingCart>(mutation);
+        var result = await this._factory.ExceuteMutationAsyn<ShoppingCart>(_shoppingCart.ToMutationGraphql());
     }
 }

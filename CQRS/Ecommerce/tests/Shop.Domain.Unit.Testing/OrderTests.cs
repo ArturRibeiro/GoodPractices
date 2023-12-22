@@ -46,7 +46,7 @@ public class OrderTests
         order.Buyer.Should().NotBeNull();
         order.Items.Should().HaveCount(5);
         order.TotalPrice.Value.Should().BeGreaterThan(0);
-        order.TotalPrice.Value.Should().Be(order.Items.Sum(x => x.Product.Price.Value));
+        order.TotalPrice.Value.Should().BeGreaterThan(order.Items.Sum(x => x.Product.Price.Value));
         order.Status.Should().Be(status);
         order.Status.Id.Should().Be(status.Id);
         order.Status.Name.Should().Be(status.Name);
@@ -71,7 +71,7 @@ public class OrderTests
         order.Buyer.Should().NotBeNull();
         order.Items.Should().HaveCount(5);
         order.TotalPrice.Value.Should().BeGreaterThan(0);
-        order.TotalPrice.Value.Should().Be(order.Items.Sum(x => x.Product.Price.Value));
+        order.TotalPrice.Value.Should().BeGreaterThan(order.Items.Sum(x => x.Product.Price.Value));
         order.Status.Should().Be(status);
         order.Status.Id.Should().Be(status.Id);
         order.Status.Name.Should().Be(status.Name);

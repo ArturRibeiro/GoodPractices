@@ -12,7 +12,7 @@ public class MutationGraphql
 
     
     private string TEMPLATE =
-        @"#NAME#(input: { #VALUE# }) {
+        @"#NAME#(input:  #VALUE# ) {
                             #RESULT#
                          }";
 
@@ -36,17 +36,12 @@ public class MutationGraphql
 
     public MutationGraphql Builder()
     {
-        //var value = PropertyInputValues.Aggregate(string.Empty, (current, d) => current + $"{d.Key} : {d.Value}");
-
         var result = this.TEMPLATE
             .Replace("#NAME#", this.Name)
             .Replace("#VALUE#", this.Query)
-            .Replace("#RESULT#", GraphqlResultValues)
-            ;
+            .Replace("#RESULT#", GraphqlResultValues);
 
-        var queryObject = new { query = "mutation {" + result +"}" };
-        
-        this.Query = JsonConvert.SerializeObject(queryObject);
+        this.Query = JsonConvert.SerializeObject(new { query = "mutation {" + result +"}" });
         
         return this;
     }

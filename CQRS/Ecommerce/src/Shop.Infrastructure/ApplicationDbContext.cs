@@ -1,3 +1,5 @@
+using Shop.Infrastructure.Seed;
+
 namespace Shop.Infrastructure;
 
 public class ApplicationDbContext : DbContext, IUnitOfWork
@@ -13,11 +15,8 @@ public class ApplicationDbContext : DbContext, IUnitOfWork
     }
 
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
-    }
-    
+    protected override void OnModelCreating(ModelBuilder modelBuilder) => modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+
     public async Task<bool> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
     {
         var result = await base.SaveChangesAsync(cancellationToken);

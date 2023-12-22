@@ -4,7 +4,9 @@ public class OrderPendingFaker : TheoryData<Client, Order, PaymentInfo, Item [],
 {
     public OrderPendingFaker()
     {
-        var order = Builder<Order>.CreateNew().Build();
+        var order = Builder<Order>.CreateNew()
+            .With(x=>x.TotalPrice, 5)
+            .Build();
         var client = Builder<Client>.CreateNew().Build();
         
         var product = new Faker<Product>()

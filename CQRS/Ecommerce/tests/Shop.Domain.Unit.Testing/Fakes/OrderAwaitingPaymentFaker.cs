@@ -4,7 +4,7 @@ public class OrderAwaitingPaymentFaker : TheoryData<Order, PaymentInfo, Status>
 {
     public OrderAwaitingPaymentFaker()
     {
-        var order = Builder<Order>.CreateNew().Build();
+        var order = Builder<Order>.CreateNew().With(x=>x.TotalPrice, 5).Build();
         var client = Builder<Client>.CreateNew().Build();
 
         var product = new Faker<Product>()
