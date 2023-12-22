@@ -1,3 +1,5 @@
+using FluentAssertions;
+
 namespace Shop.Infrastructure.Integration.Testing;
 
 [Collection("IntegrationTestWebAppFactory")]
@@ -13,6 +15,8 @@ public class ApplicationDbContextTests
     [Fact]
     public void Test1()
     {
-        var ordres = _factory.ApplicationDbContext.Users.ToList();
+        var orders = _factory.ApplicationDbContext.Users.ToList();
+
+        orders.Should().NotBeNull();
     }
 }

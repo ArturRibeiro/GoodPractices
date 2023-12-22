@@ -1,6 +1,4 @@
-﻿using Writing.Integration.Testing.With.Docker.Integration.Testing.Utils;
-
-namespace Writing.Integration.Testing.With.Docker.Integration.Testing
+﻿namespace Writing.Integration.Testing.With.Docker.Integration.Testing
 {
     [Collection("IntegrationTestWebAppFactory")]
     public class ApplicationDbContextTests
@@ -26,6 +24,8 @@ namespace Writing.Integration.Testing.With.Docker.Integration.Testing
             // }
 
             var dbContext = _context.Services.CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+            dbContext.Should().NotBeNull();
         }
     }
 }

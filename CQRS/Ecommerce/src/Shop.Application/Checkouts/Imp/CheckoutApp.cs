@@ -4,7 +4,6 @@ public class CheckoutApp : IRequestHandler<CheckoutMessageRequest>
 {
     private readonly IApplicationUser _applicationUser;
     private readonly IOrderRepository _orderRepository;
-    private readonly IClientRepository _clientRepository;
     private readonly IServiceClient _serviceClient;
 
     public CheckoutApp(IApplicationUser applicationUser
@@ -14,7 +13,6 @@ public class CheckoutApp : IRequestHandler<CheckoutMessageRequest>
     {
         _applicationUser = applicationUser;
         _orderRepository = orderRepository;
-        _clientRepository = clientRepository;
         _serviceClient = serviceClient;
     }
 

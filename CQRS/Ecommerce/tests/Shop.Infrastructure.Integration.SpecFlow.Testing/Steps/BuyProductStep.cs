@@ -62,5 +62,7 @@ public class BuyProductStep
     public async Task ThenACompraDeveSerConcluidaComSucesso()
     {
         var result = await this._factory.ExceuteMutationAsyn<ShoppingCart>(_shoppingCart.ToMutationGraphql());
+
+        result.Should().NotBeNull();
     }
 }
