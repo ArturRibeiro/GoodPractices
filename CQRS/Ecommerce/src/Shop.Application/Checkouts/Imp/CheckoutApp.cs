@@ -20,7 +20,7 @@ public class CheckoutApp : IRequestHandler<CheckoutMessageRequest>
     {
         var productReadModels = await _serviceClient.GetProductPrices(request.Products);
 
-        Either<Exception, bool> x = Try<bool>.Cath(() =>
+        Try<bool>.Cath(() =>
         {
             _orderRepository.Add(Order.Factory
                 .Create()
@@ -38,9 +38,8 @@ public class CheckoutApp : IRequestHandler<CheckoutMessageRequest>
         // 3 - Enviar o emial de pedido concluído
     }
 
-    private static IEnumerable<Item> GetItems(
-        IEnumerable<ProductMessageResponse> productMessageRequests) =>
-        from productMessageRequest in productMessageRequests
+    private static Func<IEnumerable<ProductMessageResponse>, IEnumerable<Item>> GetItems = productMessageRequests 
+        => from productMessageRequest in productMessageRequests
         let result = new { Product = new Product(productMessageRequest.Id, productMessageRequest.Price), productMessageRequest.Quantity }
         select new Item(result.Product, result.Quantity);
 }
