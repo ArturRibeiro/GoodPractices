@@ -6,7 +6,7 @@
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
     </PropertyGroup>
-    <PropertyGroup Label="Testing">
+    <PropertyGroup Label="Microsoft Testing">
         <MicrosoftNETTestSdk>17.5.0</MicrosoftNETTestSdk>
         <xunit>2.4.2</xunit>
         <xunitrunnervisualstudio>2.4.5</xunitrunnervisualstudio>
@@ -16,6 +16,9 @@
         <Faker>1.0.2</Faker>
         <Bogus>34.0.2</Bogus>
         <Testcontainers>3.5.0</Testcontainers>
+        <NetArchTest>1.3.2</NetArchTest>
+        <MicrosoftAspNetCoreMvcTesting>7.0.11</MicrosoftAspNetCoreMvcTesting>
+        <Moq>4.20.69</Moq>
     </PropertyGroup>
     
     <PropertyGroup Label="Rebus">
@@ -28,10 +31,30 @@
 
     <PropertyGroup Label="GraphQL">
         <HotChocolate>13.7.0</HotChocolate>
-        <Voyager>7.6.0</Voyager>
+        <Voyager>7.6.0</Voyager>        
     </PropertyGroup>
+    
+    <PropertyGroup Label="Microsoft">
+        <MicrosoftAspNetCoreOpenApi>7.0.11</MicrosoftAspNetCoreOpenApi>        
+        <Swashbuckle>6.5.0</Swashbuckle>        
+        <MicrosoftExtensionsOptions>7.0.1</MicrosoftExtensionsOptions>        
+        <CachingMemory>7.0.0</CachingMemory>        
+        <DependencyInjection>7.0.0</DependencyInjection>        
+    </PropertyGroup>  
     
     <PropertyGroup Label="Entity framework core">
         <EntityFrameworkCore>7.0.14</EntityFrameworkCore>
+        <EntityFrameworkCorePostgreSQL>7.0.11</EntityFrameworkCorePostgreSQL>
+        <NamingConventions>7.0.2</NamingConventions>
+        <InMemory>7.0.2</InMemory>
+    </PropertyGroup>
+
+    <PropertyGroup Label="Castle">
+        <Castle>5.1.1</Castle>
+    </PropertyGroup>
+
+    <PropertyGroup Label="SpecFlow">
+        <LivingDocPlugin>3.9.57</LivingDocPlugin>
+        <SpecFlowxUnit>3.9.22</SpecFlowxUnit>
     </PropertyGroup>
 </Project>

@@ -8,7 +8,7 @@
 
     <ItemGroup>
         <PackageReference Include="Bogus" Version="$(Bogus)" />
-        <PackageReference Include="FluentAssertions" Version="6.12.0" />
+        <PackageReference Include="FluentAssertions" Version="$(FluentAssertions)" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="$(EntityFrameworkCore)" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="$(EntityFrameworkCore)"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="$(EntityFrameworkCore)" />
@@ -19,7 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="MediatR" Version="12.2.0" />
+        <PackageReference Include="MediatR" Version="$(MediatR)" />
     </ItemGroup>
 
 
