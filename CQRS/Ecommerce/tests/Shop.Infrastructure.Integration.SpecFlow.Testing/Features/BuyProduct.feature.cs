@@ -112,10 +112,10 @@ namespace Shop.Infrastructure.Integration.SpecFlow.Testing.Features
         testRunner.Given("que o usuário visualize todos os produto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
-        testRunner.Given("que o usuário seleciona alguns produto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+        testRunner.Given("que o usuário seleciona alguns(\"5\") produto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
-        testRunner.And("adiciona no carrinho de compras", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.And("adiciona no carrinho de compras(\"5\")", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",

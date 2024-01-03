@@ -12,4 +12,5 @@ global using Shop.Domain.Orders;
 global using Shop.Domain.SharedKernel;
 global using Shop.Infrastructure.Abstractions;
 global using Shop.Infrastructure.Abstractions.Impl;
+global using Shop.Infrastructure.EventSourcing;
 global using Shop.Infrastructure.Repositorys;

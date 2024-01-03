@@ -24,7 +24,7 @@ public class CheckoutApp : IRequestHandler<CheckoutMessageRequest>
         {
             _orderRepository.Add(Order.Factory
                 .Create()
-                .AddClient(new Client(_applicationUser.UserId))
+                .AddClient(CreateClient(_applicationUser.UserId))
                 .AddItem(() => GetItems(productReadModels))
                 .Checkout());
 
@@ -38,6 +38,8 @@ public class CheckoutApp : IRequestHandler<CheckoutMessageRequest>
         // 3 - Enviar o emial de pedido concluído
     }
 
+    private static Func<long, Client> CreateClient = arg => new Client(arg);
+    
     private static Func<IEnumerable<ProductMessageResponse>, IEnumerable<Item>> GetItems = productMessageRequests 
         => from productMessageRequest in productMessageRequests
         let result = new { Product = new Product(productMessageRequest.Id, productMessageRequest.Price), productMessageRequest.Quantity }

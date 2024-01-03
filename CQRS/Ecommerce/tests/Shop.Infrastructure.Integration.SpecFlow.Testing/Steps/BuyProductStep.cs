@@ -33,18 +33,21 @@ public class BuyProductStep
         _scenarioContext.Add("Products", products);
      }
 
-    [Given(@"que o usuário seleciona alguns produto")]
-    public async Task GivenQueOUsuarioSelecionaAlgunsProduto()
+    [Given(@"que o usuário seleciona alguns\(""(.*)""\) produto")]
+    public async Task GivenQueOUsuarioSelecionaAlgunsProduto(short totalProdutos)
     {
         var allProduct = _scenarioContext.Get<Result<List<ProductDto>>>("Products");
-        var chosenProducts = allProduct.RandomSelection(4);
+        var chosenProducts = allProduct.RandomSelection(totalProdutos);
         foreach (var productReadModel in chosenProducts) productReadModel.QuantityInStock = 1;
         _scenarioContext.Add("ChosenProducts", chosenProducts);
     }
 
-    [Given(@"adiciona no carrinho de compras")]
-    public void GivenAdicionaNoCarrinhoDeCompras() 
-        => _shoppingCart.AddProducts(_scenarioContext.Get<List<ProductDto>>("ChosenProducts"));
+    [Given(@"adiciona no carrinho de compras\(""(.*)""\)")]
+    public void GivenAdicionaNoCarrinhoDeCompras(short totalProdutos)
+    {
+        _shoppingCart.AddProducts(_scenarioContext.Get<List<ProductDto>>("ChosenProducts"));
+        _shoppingCart.Products.Should().HaveCount(totalProdutos);
+    }
 
     [When(@"o usuário inicia o processo de checkout")]
     public async Task WhenOUsuarioIniciaOProcessoDeCheckout() 
@@ -65,4 +68,5 @@ public class BuyProductStep
 
         result.Should().NotBeNull();
     }
+
 }

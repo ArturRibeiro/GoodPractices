@@ -6,6 +6,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IClientRepository, ClientRepository>();
+        services.AddScoped<IEventSourcingRepository, EventSourcingRepository>();
         services.AddScoped<IApplicationUser>(_ => new ApplicationUser());
         
         services.AddDbContext<ApplicationDbContext>(options =>

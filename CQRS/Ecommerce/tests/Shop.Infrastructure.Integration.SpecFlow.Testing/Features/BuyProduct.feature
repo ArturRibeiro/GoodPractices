@@ -2,8 +2,8 @@ Feature: Processo de Checkout
 
     Scenario: Usuário realiza um checkout básico
         Given que o usuário visualize todos os produto
-        Given que o usuário seleciona alguns produto 
-        And adiciona no carrinho de compras
+        Given que o usuário seleciona alguns("5") produto 
+        And adiciona no carrinho de compras("5")
         And o usuário fornece informações de entrega válidas
           | Field   | Value             |
           | Street  | rua tal, number 9 |

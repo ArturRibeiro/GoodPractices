@@ -49,8 +49,9 @@
         <InMemory>7.0.2</InMemory>
     </PropertyGroup>
 
-    <PropertyGroup Label="Castle">
+    <PropertyGroup Label="Others">
         <Castle>5.1.1</Castle>
+        <Newtonsoft>13.0.3</Newtonsoft>
     </PropertyGroup>
 
     <PropertyGroup Label="SpecFlow">

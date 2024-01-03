@@ -12,6 +12,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="$(EntityFrameworkCore)" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="$(EntityFrameworkCore)"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="$(EntityFrameworkCore)" />
+        <PackageReference Include="Newtonsoft.Json" Version="$(Newtonsoft)" />
     </ItemGroup>
 
     <ItemGroup>
@@ -21,6 +22,5 @@
     <ItemGroup>
         <PackageReference Include="MediatR" Version="$(MediatR)" />
     </ItemGroup>
-
 
 </Project>

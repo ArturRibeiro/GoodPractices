@@ -3,7 +3,10 @@
 public record CheckoutMessageRequest(ProductMessageRequest[] Products
         , CreditCardMessageRequest CreditCard
         , UserShippingAddressMessageRequest ShippingAddress)
-    : IRequest;
+    : IIdempotentRequest
+{
+    public Guid CommandId { get; private set; } = Guid.NewGuid();
+}
 
 public record CreditCardMessageRequest(string Number, string ExpirationDate, string CVV);
 
