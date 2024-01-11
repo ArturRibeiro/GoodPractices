@@ -7,5 +7,6 @@ public interface ISpecification<T>
     ISpecification<T> Or(ISpecification<T> other);
     ISpecification<T> Not();
     ISpecification<T> Not(ISpecification<T> other);
-    ISpecification<T> Contains<TValue>(Func<T, IEnumerable<TValue>> valueSelector, TValue targetValue);
+    ISpecification<T> Contains<TValue>(Expression<Func<T, IEnumerable<TValue>>> valueSelector, TValue targetValue);
+    Expression<Func<T, bool>> ToExpression();
 }

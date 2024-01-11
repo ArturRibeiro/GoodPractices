@@ -2,9 +2,16 @@ namespace Specifications.Imp;
 
 public class NotSpecification<T> : SpecificationBase<T>
 {
-    private readonly ISpecification<T> _spec;
+    private readonly ISpecification<T> _specification;
 
-    public NotSpecification(ISpecification<T> spec) => _spec = spec ?? throw new ArgumentNullException(nameof(spec));
+    public NotSpecification(ISpecification<T> spec) => _specification = spec;
 
-    public override bool IsSatisfiedBy(T candidate) => !_spec.IsSatisfiedBy(candidate);
+
+    public override Expression<Func<T, bool>> ToExpression()
+    {
+        var expression = _specification.ToExpression();
+        var notExpression = Expression.Not(expression.Body);
+
+        return Expression.Lambda<Func<T, bool>>(notExpression, expression.Parameters.Single());
+    }
 }
