@@ -12,6 +12,7 @@
 - [Facade](/Facade/FacadePattern.md)
 - [Chain Of Responsibility](/Chain.Of.Responsibility/ChainOfResponsibilityPattern.md)
 - [Saga] *
+- [Specification](Shared/Specifications/Specification.md)
 ### Design Patterns Functional Programming
 - [Either](/Functional.Programming/README.Either.md)
 - [Options] *
