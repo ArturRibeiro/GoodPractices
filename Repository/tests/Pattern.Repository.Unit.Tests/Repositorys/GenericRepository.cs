@@ -1,4 +1,4 @@
-namespace Pattern.Repository.Imp
+namespace Pattern.Repository.Unit.Tests.Repositorys
 {
     public abstract class GenericRepository<TEntity> : IGenericRepository<TEntity>  where TEntity : class
     {

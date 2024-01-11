@@ -29,8 +29,4 @@
     <ItemGroup>
       <ProjectReference Include="..\..\src\Pattern.Repository.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\src\Pattern.Repository.csproj" />
-    </ItemGroup>
 </Project>

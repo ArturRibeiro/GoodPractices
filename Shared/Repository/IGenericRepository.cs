@@ -1,4 +1,4 @@
-﻿namespace Pattern.Repository
+﻿namespace Shared.Repository
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {

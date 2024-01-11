@@ -6,4 +6,5 @@ global using Microsoft.EntityFrameworkCore.Metadata;
 global using Moq;
 global using Pattern.Repository.Unit.Tests.Fakers;
 global using Pattern.Repository.Unit.Tests.Repositorys;
+global using Shared.Repository;
 global using Xunit;
