@@ -1,4 +1,4 @@
-﻿namespace Specifications;
+﻿namespace Shared.Specifications;
 
 public interface ISpecification<T>
 {

@@ -2,7 +2,7 @@ namespace Specification.Unit.Testing;
 
 public class QueryableSpecificationTests
 {
-    [Theory]
+    [Theory(DisplayName = "Queryable First Success")]
     [ClassData(typeof(PredicateFirstFaker))]
     public void QueryableFirstSuccess(ISpecification<Person> specification, List<Person> persons, string expected)
     {
@@ -16,7 +16,7 @@ public class QueryableSpecificationTests
         result.Name.Should().Be(expected);
     }
     
-    [Theory]
+    [Theory(DisplayName = "Queryable List Success")]
     [ClassData(typeof(PredicateListFaker))]
     public void QueryableListSuccess(ISpecification<Person> specification, List<Person> persons, Person expectedPerson)
     {

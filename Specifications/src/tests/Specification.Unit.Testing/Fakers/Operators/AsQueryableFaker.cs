@@ -1,5 +1,3 @@
-using Specifications;
-
 namespace Specification.Unit.Testing.Fakers.Operators;
 
 public class PredicateFirstFaker : TheoryData<ISpecification<Person>, List<Person>, string>

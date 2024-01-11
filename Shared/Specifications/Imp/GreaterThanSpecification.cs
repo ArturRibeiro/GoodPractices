@@ -1,4 +1,4 @@
-namespace Specifications.Imp;
+namespace Shared.Specifications.Imp;
 
 public class GreaterThanSpecification<T> : SpecificationBase<T>
 {

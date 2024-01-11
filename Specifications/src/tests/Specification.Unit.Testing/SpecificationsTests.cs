@@ -1,8 +1,8 @@
 namespace Specification.Unit.Testing;
 
-public class AndSpecificationTests
+public class SpecificationsTests
 {
-    [Theory]
+    [Theory(DisplayName = "Operator AndSpecification Is SatisfiedBy")]
     [ClassData(typeof(AndSpecificationFaker))]
     public void AndSpecificationIsSatisfiedBy(FakeSpecification spec1, FakeSpecification spec2, bool expected)
     {
@@ -16,7 +16,7 @@ public class AndSpecificationTests
         result.Should().Be(result);
     }
 
-    [Theory]
+    [Theory(DisplayName = "Operator OrSpecification Is SatisfiedBy")]
     [ClassData(typeof(OrSpecificationFaker))]
     public void OrSpecificationIsSatisfiedBy(FakeSpecification spec1, FakeSpecification spec2, bool expected)
     {
@@ -30,7 +30,7 @@ public class AndSpecificationTests
         result.Should().Be(result);
     }
 
-    [Theory]
+    [Theory(DisplayName = "Operator NotSpecification Is SatisfiedBy")]
     [ClassData(typeof(NotSpecificationFaker))]
     public void NotSpecificationIsSatisfiedBy(FakeSpecification spec1, bool expected)
     {
@@ -44,7 +44,7 @@ public class AndSpecificationTests
         result.Should().Be(result);
     }
 
-    [Theory]
+    [Theory(DisplayName = "Operator Not Specification With Parameter Is SatisfiedBy")]
     [ClassData(typeof(NotWithParameterFaker))]
     public void NotSpecificationWithParameterIsSatisfiedBy(FakeSpecification spec1, FakeSpecification spec2,
         bool expected)
@@ -59,7 +59,7 @@ public class AndSpecificationTests
         result.Should().Be(result);
     }
 
-    [Theory]
+    [Theory(DisplayName = "Operator Contains Specification Is SatisfiedBy")]
     [ClassData(typeof(ContainsFaker))]
     //[Fact]
     public void ContainsSpecificationIsSatisfiedBy(ContainsSpecification<Person, string> specification, Person person,
@@ -74,8 +74,7 @@ public class AndSpecificationTests
         result.Should().Be(expected);
     }
 
-
-    [Fact]
+    [Fact(DisplayName = "Operator Greater Than Specification Is SatisfiedBy")]
     public void GreaterThanSpecificationIsSatisfiedBy()
     {
         // Arrange
@@ -88,7 +87,7 @@ public class AndSpecificationTests
         greaterThanSpecification.IsSatisfiedBy(first).Should().BeTrue();
     }
 
-    [Fact]
+    [Fact(DisplayName = "Operator Less Than Specification Is SatisfiedBy")]
     public void LessThanSpecificationIsSatisfiedBy()
     {
         // Arrange
@@ -101,7 +100,7 @@ public class AndSpecificationTests
         greaterThanSpecification.IsSatisfiedBy(first).Should().BeTrue();
     }
 
-    [Fact]
+    [Fact(DisplayName = "Operator Greater Than Or Equal Specification Is SatisfiedBy")]
     public void GreaterThanOrEqualSpecificationIsSatisfiedBy()
     {
         // Arrange
@@ -114,7 +113,7 @@ public class AndSpecificationTests
         list.Should().HaveCount(Person.Data.All().Count);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Operator Less Than Or Equal Specification Is SatisfiedBy")]
     public void LessThanOrEqualSpecificationIsSatisfiedBy()
     {
         // Arrange

@@ -1,14 +1,14 @@
-namespace Specifications.Imp;
+namespace Shared.Specifications.Imp;
 
 public class OrSpecification<T> : SpecificationBase<T>
 {
     private readonly ISpecification<T> _left;
     private readonly ISpecification<T> _right;
 
-    public OrSpecification(ISpecification<T> spec1, ISpecification<T> spec2)
+    public OrSpecification(ISpecification<T> left, ISpecification<T> right)
     {
-        _left = spec1;
-        _right = spec2;
+        _left = left;
+        _right = right;
     }
 
     public override Expression<Func<T, bool>> ToExpression()

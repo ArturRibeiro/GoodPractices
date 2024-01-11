@@ -1,4 +1,4 @@
-namespace Specifications.Imp;
+namespace Shared.Specifications.Imp;
 
 public class AndSpecification<T> : SpecificationBase<T>
 {
