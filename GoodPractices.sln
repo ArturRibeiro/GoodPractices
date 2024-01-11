@@ -11,9 +11,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1D73E887-6E30-4DA7-A913-3AF11D9ADBB2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{918D9E8C-4255-4B6F-87C6-2B37808E7648}"
-	ProjectSection(SolutionItems) = preProject
-		Repository\RepositoryPattern.md = Repository\RepositoryPattern.md
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7A3980C5-A680-4637-922B-25B40CDE704D}"
 EndProject
