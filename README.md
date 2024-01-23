@@ -1,5 +1,8 @@
 ### Good Practices
 
+### EF Core
+- [Types of Inheritance](EF/src/Inheritance/Inheritance.md)
+
 ### Tests
 - Writing Integration testing with Docker
 - Writing unit tests for Architecture
