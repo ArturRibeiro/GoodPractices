@@ -15,7 +15,7 @@
         <NBuilder>6.1.0</NBuilder>
         <Faker>1.0.2</Faker>
         <Bogus>34.0.2</Bogus>
-        <Testcontainers>3.5.0</Testcontainers>
+        <Testcontainers>3.7.0</Testcontainers>
         <NetArchTest>1.3.2</NetArchTest>
         <MicrosoftAspNetCoreMvcTesting>7.0.11</MicrosoftAspNetCoreMvcTesting>
         <Moq>4.20.69</Moq>

@@ -12,7 +12,7 @@ namespace Writing.Integration.Testing.With.Docker.Integration.Testing
             _context = context;
         }
 
-        [Theory(Skip = "Need docker")]
+        [Theory]
         [InlineData(1)]
         public async Task ExecuteCommand(int esperado)
         {

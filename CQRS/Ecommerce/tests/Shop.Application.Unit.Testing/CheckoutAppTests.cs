@@ -6,6 +6,7 @@ public class CheckoutAppTests
     private readonly Mock<IClientRepository> _clientRepository = new();
     private readonly Mock<IOrderRepository> _orderRepository = new();
     private readonly Mock<IServiceClient> _serviceClient = new();
+    private readonly Mock<IUnitOfWork> _unitOfWork = new();
 
     
     [Theory]
@@ -13,16 +14,16 @@ public class CheckoutAppTests
     public async Task CheckoutSuccess(CheckoutMessageRequest request, Client client)
     {
         // Stub's
-        _clientRepository.Setup(x => x.GetById(It.IsAny<long>())).Returns(client);
         _orderRepository.Setup(x => x.Add(It.IsAny<Order>()));
+        _orderRepository.SetupGet(x => x.UnitOfWork).Returns(_unitOfWork.Object);
         
-        var app = new CheckoutApp(_applicationUser.Object, _orderRepository.Object, _clientRepository.Object, _serviceClient.Object);
+        var app = new CheckoutApp(_applicationUser.Object, _orderRepository.Object, _serviceClient.Object);
 
         // Act
         var result = app.Handle(request, CancellationToken.None);
         
         //Assert's
         _orderRepository.Verify(x => x.Add(It.IsAny<Order>()), Times.Once);
-        _serviceClient.Verify(x => x.GetProductPrices(It.IsAny<ProductMessageRequest[]>()), Times.Once);
+        _unitOfWork.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
     }
 }

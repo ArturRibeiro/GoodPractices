@@ -35,4 +35,11 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Remove="Rabbit\RabbitMqConfig.cs" />
+      <Compile Remove="Rabbit\MessagePublisher.cs" />
+      <Compile Remove="Rabbit\MessageConsumer.cs" />
+    </ItemGroup>
 </Project>

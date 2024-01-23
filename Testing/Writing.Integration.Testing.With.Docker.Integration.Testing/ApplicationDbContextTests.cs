@@ -10,7 +10,7 @@
             _context = context;
         }
 
-        [Fact(Skip = "Need docker")]
+        [Fact]
         public async Task GetApplicationDbContext()
         {
             // using (DbConnection connection = new NpgsqlConnection(_postgreSqlContainer.GetConnectionString()))

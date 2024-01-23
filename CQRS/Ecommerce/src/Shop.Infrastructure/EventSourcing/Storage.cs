@@ -14,6 +14,4 @@ public class Storage : Entity<long>
         this.Name = name;
         this.Json = json;
     }
-
-    
 }

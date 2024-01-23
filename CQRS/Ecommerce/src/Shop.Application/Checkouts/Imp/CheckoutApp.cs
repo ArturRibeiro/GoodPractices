@@ -8,7 +8,6 @@ public class CheckoutApp : IRequestHandler<CheckoutMessageRequest>
 
     public CheckoutApp(IApplicationUser applicationUser
         , IOrderRepository orderRepository
-        , IClientRepository clientRepository
         , IServiceClient serviceClient)
     {
         _applicationUser = applicationUser;
