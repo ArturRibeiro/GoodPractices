@@ -1,4 +1,4 @@
-﻿namespace TPC.Domain;
+namespace TablePerType.Domain;
 
 public class Customer : Person
 {

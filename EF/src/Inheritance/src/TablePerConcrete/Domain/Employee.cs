@@ -1,4 +1,4 @@
-namespace TPC.Domain;
+namespace TablePerConcrete.Domain;
 
 public class Employee : Person
 {

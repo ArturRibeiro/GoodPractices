@@ -1,4 +1,4 @@
-namespace TPT.Domain;
+﻿namespace TablePerConcrete.Domain;
 
 public class Customer : Person
 {

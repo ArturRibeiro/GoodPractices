@@ -1,9 +1,6 @@
-using Microsoft.EntityFrameworkCore;
-using TPC.Domain;
+namespace TablePerConcrete.Infra;
 
-namespace TPC.Infra;
-
-public class ApplicationTPCDbContext : DbContext
+public class ApplicationTpcDbContext : DbContext
 {
     public DbSet<Employee> Employees { get; set; }
     public DbSet<Customer> Customers { get; set; }
@@ -11,7 +8,7 @@ public class ApplicationTPCDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var currentDirectory = Directory.GetCurrentDirectory();
-        optionsBuilder.UseSqlite($"Data Source={currentDirectory}/TPC.db")
+        optionsBuilder.UseSqlite($"Data Source={currentDirectory}/TablePerConcrete.db")
             .LogTo(Console.WriteLine,
                 new[] { DbLoggerCategory.Database.Command.Name });
     }

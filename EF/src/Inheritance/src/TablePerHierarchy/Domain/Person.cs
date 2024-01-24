@@ -1,4 +1,4 @@
-namespace TPH.Domain;
+namespace TablePerHierarchy.Domain;
 
 public class Person
 {

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>$(TargetFramework)</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdk)"/>
+        <PackageReference Include="xunit" Version="$(xunit)"/>
+        <PackageReference Include="xunit.runner.visualstudio" Version="$(xunitrunnervisualstudio)">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="$(coverletcollector)">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\TablePerConcrete\TablePerConcrete.csproj" />
+      <ProjectReference Include="..\..\TablePerHierarchy\TablePerHierarchy.csproj" />
+      <ProjectReference Include="..\..\TablePerType\TablePerType.csproj" />
+    </ItemGroup>
+
+
+</Project>

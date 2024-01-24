@@ -1,4 +1,4 @@
-namespace TPT.Domain;
+namespace TablePerType.Domain;
 
 public class Person
 {
