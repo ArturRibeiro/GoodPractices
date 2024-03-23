@@ -27,6 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\Shared.csproj" />
       <ProjectReference Include="..\..\src\Pattern.Repository.csproj" />
     </ItemGroup>
 </Project>
