@@ -19,3 +19,4 @@
 ### Design Patterns Functional Programming
 - [Either](/Functional.Programming/README.Either.md)
 - [Options] *
+- [Fluent Builder](/Fluent.Builder/src/Fluent.Builder.md)

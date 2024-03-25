@@ -16,7 +16,9 @@ public class FluentBuilderTesting
             .WithMaterial(p1["CastleMaterial"])
             .WithWallHeight(p2["CastleHeight"])
             .WithMoat(moat =>
-                moat.AddDepth(p2["MoatDepth"]).AddWidth(p2["MoatWidth"]).AddThereAreFish(p3["MoatThereAreFish"]))
+                moat.AddDepth(p2["MoatDepth"])
+                    .AddWidth(p2["MoatWidth"])
+                    .AddThereAreFish(p3["MoatThereAreFish"]))
             .NumberOfTowers(number: p2["CastleNumberOfTowers"], towerDetail =>
                 towerDetail.AddHeight(p2["TowerHeight"])
                     .AddMaterial(p1["TowerMaterial"])
