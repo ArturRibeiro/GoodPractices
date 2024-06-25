@@ -4,15 +4,15 @@ public class SpecificationSortTests
 {
     [Theory]
     [ClassData(typeof(VagaFaker))]
-    public void Ordenacao(IQueryable<VagaReadModel> queryable, TypeSort sortOrder)
+    public void Ordenacao(IQueryable<Vaga> queryable, TypeSort sortOrder)
     {
         // Arrange
         // Exemplo de uso
 
-        var sortByTotalizadorDay = new SortByTotalizadorDaySpecification();
-        var sortByTotalizadorMonth = new SortByTotalizadorMonthTotalSpecification();
-        var sortByTotalizadorDescricao = new SortByTotalizadorDescricaoSpecification();
-        var compositeSort = new CompositeSpecificationSort<VagaReadModel>();
+        var sortByTotalizadorDay = new SortByDataEntradaSpecification();
+        var sortByTotalizadorMonth = new SortByTotalDoDiaSpecification();
+        var sortByTotalizadorDescricao = new SortByTotalDoDiaSpecification();
+        var compositeSort = new CompositeSpecificationSort<Vaga>();
         compositeSort.AddSpecification(sortByTotalizadorMonth)
             .AddSpecification(sortByTotalizadorDay)
             .AddSpecification(sortByTotalizadorDescricao);

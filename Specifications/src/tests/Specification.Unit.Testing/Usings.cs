@@ -6,5 +6,4 @@ global using Shared.Specifications.Sorts;
 global using Specification.Unit.Testing.Fakers;
 global using Specification.Unit.Testing.Fakers.Operators;
 global using Specification.Unit.Testing.Sorts.Fakers;
-global using Specification.Unit.Testing.Sorts.Specifications;
 global using Xunit;
